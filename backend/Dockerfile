@@ -16,6 +16,7 @@ RUN npm ci || npm install
 FROM base AS build
 WORKDIR /app
 COPY prisma ./prisma
+RUN rm -f prisma/.env || true
 RUN npx prisma generate
 COPY . .
 # RUN npm run build
@@ -26,4 +27,4 @@ ENV NODE_ENV=production
 ENV PORT=3001
 EXPOSE 3001
 COPY --from=build /app ./
-CMD ["sh","-c","npx prisma migrate deploy && npm start"]
+CMD ["sh","-c","rm -f prisma/.env || true; npx prisma migrate deploy && npm start"]
