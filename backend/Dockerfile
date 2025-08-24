@@ -1,8 +1,7 @@
 # syntax=docker/dockerfile:1
 # ------------------------------------------------------------
 # Backend Dockerfile (OpenSSL 3 / Node 20 bookworm) — safe format
-# - No line-continuations (avoids parser glitches like 'unknown instruction: px')
-# - Prisma client generated with debian-openssl-3.0.x
+# No line-continuations; keeps Prisma generate in build stage.
 # ------------------------------------------------------------
 
 FROM node:20-bookworm-slim AS base
