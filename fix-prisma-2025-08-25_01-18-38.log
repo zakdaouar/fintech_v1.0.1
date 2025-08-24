@@ -1,0 +1,57 @@
+[2025-08-25 01:18:40] [START] ?? DÉBUT - Correction des problèmes Prisma pour déploiement Render
+[2025-08-25 01:18:40] [INFO] Fichier de log: fix-prisma-2025-08-25_01-18-38.log
+[2025-08-25 01:18:41] [CHECK] Vérification de l'arborescence du projet...
+[2025-08-25 01:18:42] [SUCCESS] ? Dossier 'backend' trouvé
+[2025-08-25 01:18:42] [INFO] Structure actuelle détectée:
+[2025-08-25 01:18:43] [INFO]   ? backend/package.json
+[2025-08-25 01:18:43] [INFO]   ? backend/Dockerfile (sera remplacé)
+[2025-08-25 01:18:44] [INFO]   ? backend/src/
+[2025-08-25 01:18:45] [INFO]   ? backend/prisma/
+[2025-08-25 01:18:45] [WARN]   ?? backend/package-lock.json (absent - utilisera npm install)
+[2025-08-25 01:18:46] [PROCESS] ?? Nettoyage des occurrences d'engineType dans le code...
+[2025-08-25 01:18:47] [SUCCESS] ? Nettoyage engineType terminé: 0 fichier(s) modifié(s)
+[2025-08-25 01:18:47] [PROCESS] ??? Suppression des variables PRISMA_* problématiques des fichiers .env...
+[2025-08-25 01:18:47] [SUCCESS] ? Nettoyage fichiers .env terminé: 0 fichier(s) modifié(s)
+[2025-08-25 01:18:47] [PROCESS] ?? Écriture de backend/src/prismaClient.js...
+[2025-08-25 01:18:48] [SUCCESS] ? backend/src/prismaClient.js écrit avec succès (12 lignes)
+[2025-08-25 01:18:48] [PROCESS] ?? Écriture de backend/Dockerfile...
+[2025-08-25 01:18:49] [SUCCESS] ? backend/Dockerfile écrit avec succès (55 lignes)
+[2025-08-25 01:18:49] [CHECK] ?? Vérification de backend/package.json...
+[2025-08-25 01:18:50] [SUCCESS] ? backend/package.json lu avec succès
+[2025-08-25 01:18:50] [CHECK]   ? @prisma/client trouvé: 5.15.0
+[2025-08-25 01:18:50] [CHECK]   ? prisma devDependency trouvé: ^6.14.0
+[2025-08-25 01:18:50] [CHECK]   ? express trouvé: 4.19.2
+[2025-08-25 01:18:50] [CHECK]   ? scripts.start trouvé: 'node src/server.js'
+[2025-08-25 01:18:50] [CHECK]   ? type défini: 'module'
+[2025-08-25 01:18:50] [WARN] ?? Problèmes détectés dans package.json:
+[2025-08-25 01:18:50] [ISSUE]   ?? @prisma/client n'est pas en version ^6.14.0 (actuel: 5.15.0)
+[2025-08-25 01:18:50] [PROCESS] ?? Vérification de l'état Git avant commit...
+[2025-08-25 01:18:50] [SUCCESS] ? Repository Git détecté
+[2025-08-25 01:18:50] [INFO] ?? Modifications détectées:
+[2025-08-25 01:18:50] [GIT]    M backend/Dockerfile
+[2025-08-25 01:18:50] [GIT]    M backend/src/prismaClient.js
+[2025-08-25 01:18:50] [GIT]   ?? fix-prisma-2025-08-25_01-18-38.log
+[2025-08-25 01:18:51] [PROCESS] ?? Commit et push des modifications...
+[2025-08-25 01:18:51] [ERROR] ? Exception lors du commit/push: warning: in the working copy of 'backend/src/prismaClient.js', LF will be replaced by CRLF the next time Git touches it
+[2025-08-25 01:18:52] [INSTRUCTIONS] ?? INSTRUCTIONS RENDER:
+[2025-08-25 01:18:52] [INSTRUCTIONS] ================================
+[2025-08-25 01:18:52] [INSTRUCTIONS] 1. Aller dans Settings ? Environment de votre service Render
+[2025-08-25 01:18:52] [INSTRUCTIONS] 2. SUPPRIMER toutes les variables qui commencent par:
+[2025-08-25 01:18:52] [INSTRUCTIONS]    - PRISMA_QUERY_ENGINE_*
+[2025-08-25 01:18:52] [INSTRUCTIONS]    - PRISMA_ENGINES_*
+[2025-08-25 01:18:52] [INSTRUCTIONS] 3. Pour PRISMA_CLIENT_ENGINE_TYPE:
+[2025-08-25 01:18:52] [INSTRUCTIONS]    - Soit la SUPPRIMER complètement (recommandé)
+[2025-08-25 01:18:52] [INSTRUCTIONS]    - Soit la définir à 'library' si nécessaire
+[2025-08-25 01:18:53] [INSTRUCTIONS] 4. Aller dans Manual Deploy ? Clear build cache & Deploy
+[2025-08-25 01:18:53] [INSTRUCTIONS] ================================
+[2025-08-25 01:18:53] [DEBUG] ?? COMMANDE DE DIAGNOSTIC (ESM):
+[2025-08-25 01:18:53] [DEBUG] node -e "console.log(\"PRISMA_* env:\",Object.fromEntries(Object.entries(process.env).filter(([k])=>k.startsWith(\"PRISMA_\")))); import(\"@prisma/client\").then(({PrismaClient})=>{const p=new PrismaClient({log:[\"warn\",\"error\"]}); return p.$connect().then(()=>{console.log(\"Prisma connect: OK\"); return p.$disconnect();}).catch(e=>{console.error(\"Prisma connect: FAIL\",e); process.exit(1);});});"
+[2025-08-25 01:18:53] [SUMMARY] ?? RÉSUMÉ D'EXÉCUTION:
+[2025-08-25 01:18:53] [SUMMARY]   - Durée totale: 13.67 secondes
+[2025-08-25 01:18:53] [SUMMARY]   - Fichiers engineType nettoyés: 0
+[2025-08-25 01:18:53] [SUMMARY]   - Fichiers .env modifiés: 0
+[2025-08-25 01:18:53] [SUMMARY]   - prismaClient.js: ? créé/mis à jour
+[2025-08-25 01:18:53] [SUMMARY]   - Dockerfile: ? créé/mis à jour
+[2025-08-25 01:18:54] [SUMMARY]   - Git commit/push: ? échec
+[2025-08-25 01:18:54] [END] ?? LOG COMPLET SAUVEGARDÉ: fix-prisma-2025-08-25_01-18-38.log
+[2025-08-25 01:18:54] [END] ?? FIN - Script terminé!

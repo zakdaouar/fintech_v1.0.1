@@ -1,7 +1,6 @@
-﻿# Build stage
-FROM node:20-bookworm-slim AS builder
+﻿FROM node:20-bookworm-slim
 
-# Install dependencies needed for build and runtime
+# Installer les dépendances système nécessaires
 RUN apt-get update && apt-get install -y \
     openssl \
     ca-certificates \
@@ -10,46 +9,25 @@ RUN apt-get update && apt-get install -y \
 
 WORKDIR /app
 
-# Copy package files
+# Copier les fichiers de dépendances
 COPY package*.json ./
 
-# Install dependencies
-RUN if [ -f package-lock.json ]; then \
-      npm ci --omit=dev; \
-    else \
-      npm install --only=production; \
-    fi && npm cache clean --force
+# Installer les dépendances Node.js
+RUN npm ci --only=production
 
-# Copy Prisma schema
-COPY prisma ./prisma/
-
-# Generate Prisma client
+# Copier le schéma Prisma et générer le client
+COPY prisma/ ./prisma/
 RUN npx prisma generate
 
-# Copy source code
-COPY src ./src/
+# Copier le code source
+COPY src/ ./src/
 
-# Production stage
-FROM node:20-bookworm-slim AS production
-
-# Install runtime dependencies
-RUN apt-get update && apt-get install -y \
-    openssl \
-    ca-certificates \
-    curl \
-    && rm -rf /var/lib/apt/lists/*
-
-WORKDIR /app
-
-# Copy built application from builder stage
-COPY --from=builder /app ./
-
-# Expose port
-EXPOSE $PORT
+# Port exposé
+EXPOSE 3000
 
 # Health check
-HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
-  CMD curl -f http://127.0.0.1:${PORT:-3000}/health || exit 1
+HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
+    CMD curl -f http://localhost:${PORT:-3000}/health || exit 1
 
-# Start application
+# Commande de démarrage
 CMD ["sh", "-c", "npx prisma migrate deploy && node src/server.js"]

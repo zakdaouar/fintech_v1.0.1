@@ -1,0 +1,44 @@
+[2025-08-25 01:25:27] [START] ?? CORRECTION FINTECH PRISMA FINALE - FORCER 6.14.0
+[2025-08-25 01:25:29] [INFO] ?? AVANT - Versions actuelles:
+[2025-08-25 01:25:29] [INFO]   - @prisma/client: 5.15.0
+[2025-08-25 01:25:29] [INFO]   - prisma: ^6.14.0
+[2025-08-25 01:25:30] [PROCESS] ?? Changement vers /backend...
+[2025-08-25 01:25:34] [PROCESS] ?? Git commit final...
+[2025-08-25 01:25:35] [INFO] ?? Modifications Git:
+[2025-08-25 01:25:35] [GIT]    M backend/Dockerfile
+[2025-08-25 01:25:35] [GIT]   M  backend/src/prismaClient.js
+[2025-08-25 01:25:35] [GIT]   ?? backend/fix-fintech-final-2025-08-25_01-25-26.log
+[2025-08-25 01:25:35] [GIT]   ?? backend/fix-fintech-prisma-2025-08-25_01-23-14.log
+[2025-08-25 01:25:35] [GIT]   ?? fix-fintech-final-2025-08-25_01-25-26.log
+[2025-08-25 01:25:35] [GIT]   ?? fix-fintech-prisma-2025-08-25_01-23-14.log
+[2025-08-25 01:25:35] [GIT]   ?? fix-prisma-2025-08-25_01-18-38.log
+[2025-08-25 01:25:35] [GIT]   ?? git add backend/package.json...
+[2025-08-25 01:25:35] [GIT]   ?? git add backend/src/prismaClient.js...
+[2025-08-25 01:25:35] [GIT]   ?? git add backend/Dockerfile...
+[2025-08-25 01:25:35] [ERROR] ? Exception Git: warning: in the working copy of 'backend/Dockerfile', CRLF will be replaced by LF the next time Git touches it
+[2025-08-25 01:25:36] [SUMMARY] ?? RÉSUMÉ CORRECTION FINTECH PRISMA:
+[2025-08-25 01:25:36] [SUMMARY] ----------------------------------------
+[2025-08-25 01:25:36] [SUMMARY] ?? Durée totale: 9.74 secondes
+[2025-08-25 01:25:36] [SUMMARY] ?? @prisma/client: 5.15.0 ? 5.15.0
+[2025-08-25 01:25:36] [SUMMARY] ?? prisma CLI: ^6.14.0
+[2025-08-25 01:25:36] [SUMMARY] ?? Client régénéré: ? avec --force
+[2025-08-25 01:25:36] [SUMMARY] ?? prismaClient.js: ? clean pour Render
+[2025-08-25 01:25:36] [SUMMARY] ?? Dockerfile: ? npm install robuste
+[2025-08-25 01:25:36] [SUMMARY] ?? Git: ? commité et pushé
+[2025-08-25 01:25:36] [WARN] ?? ATTENTION: Version Prisma à vérifier manuellement
+[2025-08-25 01:25:36] [INSTRUCTIONS] ?? ÉTAPES RENDER FINALES:
+[2025-08-25 01:25:37] [INSTRUCTIONS] ----------------------------
+[2025-08-25 01:25:37] [INSTRUCTIONS] 1?? Render Dashboard ? Votre service backend
+[2025-08-25 01:25:37] [INSTRUCTIONS] 2?? Settings ? Environment Variables:
+[2025-08-25 01:25:37] [INSTRUCTIONS]    ??? SUPPRIMER: PRISMA_QUERY_ENGINE_LIBRARY
+[2025-08-25 01:25:37] [INSTRUCTIONS]    ??? SUPPRIMER: PRISMA_QUERY_ENGINE_BINARY
+[2025-08-25 01:25:37] [INSTRUCTIONS]    ??? SUPPRIMER: PRISMA_ENGINES_*
+[2025-08-25 01:25:37] [INSTRUCTIONS]    ??? SUPPRIMER: PRISMA_CLIENT_ENGINE_TYPE
+[2025-08-25 01:25:37] [INSTRUCTIONS] 3?? Manual Deploy ? Clear build cache & Deploy
+[2025-08-25 01:25:37] [INSTRUCTIONS] 4?? Surveiller logs build pour:
+[2025-08-25 01:25:37] [INSTRUCTIONS]    ? 'Generated Prisma Client v6.14.0'
+[2025-08-25 01:25:37] [INSTRUCTIONS]    ? 'npx prisma migrate deploy' success
+[2025-08-25 01:25:37] [DEBUG] ?? COMMANDE DEBUG RENDER:
+[2025-08-25 01:25:38] [DEBUG] node -e "console.log(\"PRISMA env:\", Object.keys(process.env).filter(k=>k.startsWith(\"PRISMA_\"))); import(\"@prisma/client\").then(({PrismaClient})=>{console.log(\"? Prisma 6.14.0 loaded\"); new PrismaClient(); console.log(\"? Client OK\");})"
+[2025-08-25 01:25:38] [END] ?? Log détaillé: fix-fintech-final-2025-08-25_01-25-26.log
+[2025-08-25 01:25:39] [END] ?? CORRECTION TERMINÉE - PRISMA 6.14.0 READY!
