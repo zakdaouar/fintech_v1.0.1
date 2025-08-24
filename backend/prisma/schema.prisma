@@ -1,0 +1,58 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  name      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  customers Customer[]
+}
+
+model Customer {
+  id           String   @id @default(cuid())
+  bridgeId     String   @unique
+  user         User     @relation(fields: [userId], references: [id])
+  userId       String
+  fullName     String
+  email        String
+  status       String   @default("pending")
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  transfers    Transfer[]
+  vAccounts    VirtualAccount[]
+}
+
+model Transfer {
+  id           String   @id @default(cuid())
+  bridgeId     String   @unique
+  customer     Customer @relation(fields: [customerId], references: [id])
+  customerId   String
+  amount       Float
+  currency     String
+  status       String
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model VirtualAccount {
+  id           String   @id @default(cuid())
+  bridgeId     String   @unique
+  customer     Customer @relation(fields: [customerId], references: [id])
+  customerId   String
+  currency     String
+  bankAccountNumber String?
+  bankRoutingNumber String?
+  bankName     String?
+  status       String
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}

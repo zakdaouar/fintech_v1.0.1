@@ -1,0 +1,34 @@
+{
+  "name": "fintech-backend",
+  "version": "2.0.1",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js",
+    "prisma:migrate": "prisma migrate dev",
+    "prisma:generate": "prisma generate",
+    "setup:webhook": "node scripts/create-bridge-webhook.mjs",
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest --runInBand"
+  },
+  "dependencies": {
+    "@prisma/client": "5.15.0",
+    "axios": "1.6.8",
+    "bcryptjs": "2.4.3",
+    "cors": "2.8.5",
+    "dotenv": "16.4.5",
+    "express": "4.19.2",
+    "express-validator": "7.0.1",
+    "helmet": "7.1.0",
+    "jsonwebtoken": "9.0.2",
+    "morgan": "1.10.0",
+    "node-fetch": "3.3.2",
+    "prisma": "5.15.0",
+    "uuid": "9.0.1"
+  },
+  "devDependencies": {
+    "jest": "29.7.0",
+    "nodemon": "3.0.2",
+    "supertest": "6.3.3"
+  }
+}
