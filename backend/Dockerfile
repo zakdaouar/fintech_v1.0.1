@@ -33,7 +33,7 @@ COPY backend/ ./
 FROM base AS runner
 WORKDIR /app
 ENV NODE_ENV=production
-ENV NODE_OPTIONS=--trace-uncaught --trace-warnings --enable-source-maps
+ENV NODE_OPTIONS="--trace-uncaught --trace-warnings --enable-source-maps"
 ENV RUST_BACKTRACE=1
 ENV PRISMA_CLIENT_ENGINE_TYPE=binary
 EXPOSE 3001
