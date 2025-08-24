@@ -27,7 +27,9 @@ RUN ["/bin/sh","-lc","set -e; if [ -d /src/backend ]; then cp -r /src/backend/. 
 FROM base AS runner
 WORKDIR /app
 ENV NODE_ENV=production
+ENV PRISMA_CLIENT_ENGINE_TYPE=binary
 ENV PORT=3001
 EXPOSE 3001
 COPY --from=build /app /app
 CMD ["/bin/sh","-lc","rm -f prisma/.env || true; npx prisma migrate deploy && npm start"]
+ENV PRISMA_LOG_LEVEL=info
