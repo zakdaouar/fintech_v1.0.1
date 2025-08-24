@@ -1,0 +1,5 @@
+﻿
+
+backend/Dockerfile text eol=lf
+
+*.prisma text eol=lf
