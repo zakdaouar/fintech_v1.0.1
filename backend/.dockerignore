@@ -1,0 +1,9 @@
+# Ignore heavy/irrelevant stuff for backend image
+node_modules
+frontend
+.git
+.gitignore
+*.log
+*.bak.*
+Dockerfile.bak*
+**/.env*

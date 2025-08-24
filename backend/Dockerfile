@@ -1,33 +1,42 @@
-﻿FROM node:20-bookworm-slim
+# syntax=docker/dockerfile:1
 
-# Installer les dépendances système nécessaires
-RUN apt-get update && apt-get install -y \
-    openssl \
-    ca-certificates \
-    curl \
-    && rm -rf /var/lib/apt/lists/*
-
+FROM node:20-bookworm-slim AS base
+ENV NODE_ENV=production
 WORKDIR /app
 
-# Copier les fichiers de dépendances
+# SSL + curl for migrations and basic diagnostics
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    openssl ca-certificates curl \
+ && rm -rf /var/lib/apt/lists/*
+
+# --- deps ---
+FROM base AS deps
+WORKDIR /app
 COPY package*.json ./
+# If a lockfile exists, use ci; otherwise fall back to npm install.
+RUN if [ -f package-lock.json ] || [ -f npm-shrinkwrap.json ]; then \
+      npm ci --omit=dev; \
+    else \
+      npm install --omit=dev; \
+    fi
 
-# Installer les dépendances Node.js
-RUN npm ci --only=production
+# --- build (generate Prisma client) ---
+FROM base AS build
+WORKDIR /app
+COPY --from=deps /app/node_modules ./node_modules
+COPY prisma ./prisma
+# Ensure we don't bake a stale DB URL into the image
+RUN rm -f prisma/.env || true
+# Generate Prisma client without requiring devDeps
+RUN npx --yes prisma generate
+# Bring the rest of the backend into the image context
+COPY . .
 
-# Copier le schéma Prisma et générer le client
-COPY prisma/ ./prisma/
-RUN npx prisma generate
+# --- runner ---
+FROM base AS runner
+WORKDIR /app
+ENV PORT=3001
+COPY --from=build /app /app
 
-# Copier le code source
-COPY src/ ./src/
-
-# Port exposé
-EXPOSE 3000
-
-# Health check
-HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
-    CMD curl -f http://localhost:${PORT:-3000}/health || exit 1
-
-# Commande de démarrage
-CMD ["sh", "-c", "npx prisma migrate deploy && node src/server.js"]
+# Start: apply migrations, then run the server
+CMD npx prisma migrate deploy && node src/server.js
