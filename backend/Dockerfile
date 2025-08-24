@@ -1,4 +1,4 @@
-# Build stage
+﻿# Build stage
 FROM node:20-bookworm-slim AS builder
 
 # Install dependencies needed for build and runtime
@@ -14,7 +14,11 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies
-RUN npm ci --only=production && npm cache clean --force
+RUN if [ -f package-lock.json ]; then \
+      npm ci --omit=dev; \
+    else \
+      npm install --only=production; \
+    fi && npm cache clean --force
 
 # Copy Prisma schema
 COPY prisma ./prisma/
