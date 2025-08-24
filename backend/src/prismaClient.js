@@ -1,15 +1,9 @@
 import { PrismaClient } from '@prisma/client';
-
 const engineType = (process.env.PRISMA_CLIENT_ENGINE_TYPE === 'library') ? 'library' : 'binary';
-
 const prisma = globalThis.__prisma ?? new PrismaClient({
   engineType,
   datasources: { db: { url: process.env.DATABASE_URL } },
   log: ['warn','error']
 });
-
-if (process.env.NODE_ENV !== 'production') {
-  globalThis.__prisma = prisma;
-}
-
+if (process.env.NODE_ENV !== 'production') { globalThis.__prisma = prisma; }
 export default prisma;

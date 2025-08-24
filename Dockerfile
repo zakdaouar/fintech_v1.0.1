@@ -1,20 +1,20 @@
 # syntax=docker/dockerfile:1
-# Backend-context Dockerfile (Node 20 / OpenSSL 3)  context is backend/
+# Root-context Dockerfile (Node 20 / OpenSSL 3)  app in backend/
 FROM node:20-bookworm-slim AS base
 WORKDIR /app
 RUN apt-get update && apt-get install -y --no-install-recommends openssl ca-certificates && rm -rf /var/lib/apt/lists/*
 
 FROM base AS deps
 WORKDIR /app
-COPY package*.json ./
+COPY backend/package*.json ./
 RUN if [ -f package-lock.json ] || [ -f npm-shrinkwrap.json ]; then npm ci; else npm install; fi
 
 FROM deps AS build
 WORKDIR /app
-COPY prisma ./prisma
+COPY backend/prisma ./prisma
 RUN rm -f prisma/.env || true
 RUN npx prisma generate
-COPY . ./
+COPY backend/ ./
 # RUN npm run build
 
 FROM base AS runner
