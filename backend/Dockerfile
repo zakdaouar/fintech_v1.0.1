@@ -22,7 +22,6 @@ WORKDIR /app
 ENV NODE_ENV=production
 ENV NODE_OPTIONS="--trace-uncaught --trace-warnings --enable-source-maps"
 ENV RUST_BACKTRACE=1
-ENV PRISMA_CLIENT_ENGINE_TYPE=binary
 EXPOSE 3001
 COPY --from=build /app /app
 HEALTHCHECK --interval=10s --timeout=3s --start-period=15s --retries=12 CMD curl -fsS "http://127.0.0.1:${PORT:-3001}/health" || exit 1
