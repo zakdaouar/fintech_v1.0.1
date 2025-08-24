@@ -34,3 +34,11 @@ app.get("/health", (_req, res) => res.json({ ok: true }));
 
 const port = process.env.PORT || 3001;
 app.listen(port, () => console.log(`Backend running on :${port}`));
+process.on('unhandledRejection', (err) => {
+  console.error('[unhandledRejection]', err?.stack || err);
+  process.exit(1);
+});
+process.on('uncaughtException', (err) => {
+  console.error('[uncaughtException]', err?.stack || err);
+  process.exit(1);
+});
