@@ -1,6 +1,5 @@
 import { PrismaClient } from '@prisma/client';
 
-// Force binary by default; switch to 'library' by setting PRISMA_CLIENT_ENGINE_TYPE=library
 const engineType = (process.env.PRISMA_CLIENT_ENGINE_TYPE === 'library') ? 'library' : 'binary';
 
 const prisma = globalThis.__prisma ?? new PrismaClient({
