@@ -1,33 +1,39 @@
-FROM node:20-bookworm-slim
-
-# Dépendances système minimales (openssl pour Prisma sur Debian 12, curl pour healthcheck)
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    openssl \
-    ca-certificates \
-    curl \
-  && rm -rf /var/lib/apt/lists/*
-
+# ---------- deps ----------
+FROM node:20-slim AS deps
 WORKDIR /app
-
-# Dépendances Node (avec fallback si pas de lockfile)
+# Copie les manifestes pour tirer profit du cache
 COPY package*.json ./
-RUN /bin/sh -lc 'if [ -f package-lock.json ] || [ -f npm-shrinkwrap.json ]; then npm ci --omit=dev; else npm install --omit=dev; fi'
+# Installe les dépendances (lockfile ou non)
+RUN npm ci || npm install
 
-# Prisma client
-COPY prisma ./prisma
-# Ne jamais embarquer un .env Prisma dans l'image, on utilisera l'env Render
-RUN rm -f prisma/.env || true
+# ---------- builder ----------
+FROM node:20-slim AS builder
+WORKDIR /app
+# OpenSSL + certificats (pour Prisma & TLS)
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends openssl ca-certificates \
+ && rm -rf /var/lib/apt/lists/*
+# Récupère node_modules de l'étape deps
+COPY --from=deps /app/node_modules ./node_modules
+# Copie tout le code backend (le contexte Render est "backend/")
+COPY . .
+# Génère le client Prisma (après avoir copié prisma/)
 RUN npx prisma generate
+# Si tu compiles du TypeScript, décommente :
+# RUN npm run build
 
-# Code source (ESM)
-COPY src ./src
-
-# Port par défaut; Render injecte $PORT
-EXPOSE 3000
-
-# Healthcheck simple via curl sur /health
-HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
-  CMD curl -fsS http://127.0.0.1:${PORT:-3000}/health || exit 1
-
-# Au démarrage: appliquer migrations (si présentes), puis lancer le serveur
-CMD ["sh","-lc","npx prisma migrate deploy || true; node src/server.js"]
+# ---------- runner ----------
+FROM node:20-slim AS runner
+WORKDIR /app
+# Librairies nécessaires en runtime
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends openssl ca-certificates \
+ && rm -rf /var/lib/apt/lists/*
+ENV NODE_ENV=production
+# Ton serveur doit lire process.env.PORT
+ENV PORT=3001
+EXPOSE 3001
+# Copie l’app construite
+COPY --from=builder /app ./
+# Migrations DB au démarrage puis lancement du serveur
+CMD ["sh", "-c", "npx prisma migrate deploy && node src/server.js"]
