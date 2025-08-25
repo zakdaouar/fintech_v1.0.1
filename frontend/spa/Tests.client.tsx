@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+﻿import React, { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
@@ -33,7 +33,7 @@ const testCoverage = {
 
 const Tests = () => {
 // Check if in development mode
-const isDevelopment = import.meta.env.DEV;
+const isDevelopment = process.env.NODE_ENV -ne "production";
 useEffect(() => { document.title = 'Tests | Dev Tools'; }, []);
 
   const [balanceTest, setBalanceTest] = useState<ApiTestState>({
