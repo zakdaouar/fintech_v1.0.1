@@ -1,5 +1,6 @@
 import dynamic from 'next/dynamic';
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useToast } from '../src/components/ui/use-toast';
 
 
 const Dashboard = () => {
