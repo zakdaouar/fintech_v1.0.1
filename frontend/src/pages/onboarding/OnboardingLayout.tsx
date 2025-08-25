@@ -36,3 +36,5 @@ export const OnboardingLayout = ({ title, description, stepIndex, totalSteps, on
     </main>
   );
 };
+
+export default OnboardingLayout;
