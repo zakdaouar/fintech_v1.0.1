@@ -1,4 +1,6 @@
-import dynamic from 'next/dynamic';
+import dynamic from 'next/dynamic';
+import { useEffect, useState } from 'react';
+
 
 const Transfers = () => {
   const { toast } = useToast();
@@ -132,9 +134,9 @@ const Transfers = () => {
                       <SelectValue placeholder="Select currency" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="USD">Ã°Å¸â€¡ÂºÃ°Å¸â€¡Â¸ USD</SelectItem>
-                      <SelectItem value="EUR">Ã°Å¸â€¡ÂªÃ°Å¸â€¡Âº EUR</SelectItem>
-                      <SelectItem value="MXN">Ã°Å¸â€¡Â²Ã°Å¸â€¡Â½ MXN</SelectItem>
+                      <SelectItem value="USD">ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚ÂºÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â¸ USD</SelectItem>
+                      <SelectItem value="EUR">ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚ÂªÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Âº EUR</SelectItem>
+                      <SelectItem value="MXN">ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â²ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â½ MXN</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>

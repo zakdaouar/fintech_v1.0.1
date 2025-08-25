@@ -1,4 +1,6 @@
-import dynamic from 'next/dynamic';
+import dynamic from 'next/dynamic';
+import { useEffect, useState } from 'react';
+
 
 const Dashboard = () => {
   const navigate = useNavigate();

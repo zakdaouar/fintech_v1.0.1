@@ -1,4 +1,6 @@
-import dynamic from 'next/dynamic';
+import dynamic from 'next/dynamic';
+import { useState, useRef } from 'react';
+
 
 function ProofOfAddress() {
   const navigate = useNavigate();

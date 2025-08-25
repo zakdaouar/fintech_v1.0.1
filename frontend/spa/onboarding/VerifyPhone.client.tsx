@@ -1,4 +1,6 @@
-import dynamic from 'next/dynamic';
+import dynamic from 'next/dynamic';
+import { useState, useMemo } from 'react';
+
 
 const TTL_MS = 10 * 60 * 1000;
 

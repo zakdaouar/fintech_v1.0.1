@@ -1,4 +1,6 @@
-import dynamic from 'next/dynamic';
+import dynamic from 'next/dynamic';
+import { useEffect, useState } from 'react';
+
 
 function Login() {
   const [params] = useSearchParams();
@@ -24,7 +26,7 @@ function Login() {
   };
 
   return (
-    <OnboardingLayout title="Log in" description="WeÃ¢â‚¬â„¢ll send a 6Ã¢â‚¬â€˜digit code to your email." stepIndex={2} totalSteps={18} onBack={() => navigate(-1)}>
+    <OnboardingLayout title="Log in" description="WeÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ll send a 6ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Ëœdigit code to your email." stepIndex={2} totalSteps={18} onBack={() => navigate(-1)}>
       <form className="space-y-4" onSubmit={onSubmit}>
         <div>
           <Label htmlFor="email">Email</Label>
