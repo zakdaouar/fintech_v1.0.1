@@ -1,4 +1,5 @@
- param($m) $m.Value + "import dynamic from 'next/dynamic';`n" 
+import dynamic from 'next/dynamic';
+
 function AccountType() {
   const navigate = useNavigate();
   const [type, setType] = useState<"personal" | "business">("personal");

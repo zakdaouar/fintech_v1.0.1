@@ -1,4 +1,5 @@
- param($m) $m.Value + "import dynamic from 'next/dynamic';`n" 
+import dynamic from 'next/dynamic';
+
 function Overview() {
   const navigate = useNavigate();
 
@@ -8,7 +9,7 @@ function Overview() {
   };
 
   return (
-    <OnboardingLayout title="Whatâ€™s next" description="Youâ€™ll provide an identity document, complete a liveness check, and submit proof of address." stepIndex={11} totalSteps={18} onBack={() => navigate(-1)}>
+    <OnboardingLayout title="WhatÃ¢â‚¬â„¢s next" description="YouÃ¢â‚¬â„¢ll provide an identity document, complete a liveness check, and submit proof of address." stepIndex={11} totalSteps={18} onBack={() => navigate(-1)}>
       <div className="space-y-4 text-sm text-muted-foreground">
         <ul className="list-disc pl-5 space-y-1">
           <li>Provide identity document</li>

@@ -1,4 +1,5 @@
- param($m) $m.Value + "import dynamic from 'next/dynamic';`n" 
+import dynamic from 'next/dynamic';
+
 function Login() {
   const [params] = useSearchParams();
   const navigate = useNavigate();
@@ -23,7 +24,7 @@ function Login() {
   };
 
   return (
-    <OnboardingLayout title="Log in" description="Weâ€™ll send a 6â€‘digit code to your email." stepIndex={2} totalSteps={18} onBack={() => navigate(-1)}>
+    <OnboardingLayout title="Log in" description="WeÃ¢â‚¬â„¢ll send a 6Ã¢â‚¬â€˜digit code to your email." stepIndex={2} totalSteps={18} onBack={() => navigate(-1)}>
       <form className="space-y-4" onSubmit={onSubmit}>
         <div>
           <Label htmlFor="email">Email</Label>

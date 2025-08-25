@@ -1,4 +1,5 @@
- param($m) $m.Value + "import dynamic from 'next/dynamic';`n" 
+import dynamic from 'next/dynamic';
+
 type Contact = { country: string; address1: string; address2?: string; city: string; region: string; postalCode: string; phone: string };
 
 function ContactDetails() {

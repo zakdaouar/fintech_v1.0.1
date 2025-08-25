@@ -1,4 +1,5 @@
- param($m) $m.Value + "import dynamic from 'next/dynamic';`n" 
+import dynamic from 'next/dynamic';
+
 const Transfers = () => {
   const { toast } = useToast();
   const [transfers, setTransfers] = useState<Transfer[]>([]);
@@ -131,9 +132,9 @@ const Transfers = () => {
                       <SelectValue placeholder="Select currency" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="USD">ðŸ‡ºðŸ‡¸ USD</SelectItem>
-                      <SelectItem value="EUR">ðŸ‡ªðŸ‡º EUR</SelectItem>
-                      <SelectItem value="MXN">ðŸ‡²ðŸ‡½ MXN</SelectItem>
+                      <SelectItem value="USD">Ã°Å¸â€¡ÂºÃ°Å¸â€¡Â¸ USD</SelectItem>
+                      <SelectItem value="EUR">Ã°Å¸â€¡ÂªÃ°Å¸â€¡Âº EUR</SelectItem>
+                      <SelectItem value="MXN">Ã°Å¸â€¡Â²Ã°Å¸â€¡Â½ MXN</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>

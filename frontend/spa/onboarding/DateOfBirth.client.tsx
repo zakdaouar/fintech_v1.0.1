@@ -1,4 +1,5 @@
- param($m) $m.Value + "import dynamic from 'next/dynamic';`n" 
+import dynamic from 'next/dynamic';
+
 function DateOfBirth() {
   const navigate = useNavigate();
   const [dob, setDob] = useState("");

@@ -1,4 +1,5 @@
- param($m) $m.Value + "import dynamic from 'next/dynamic';`n" 
+import dynamic from 'next/dynamic';
+
 const IssueCard = () => {
   const [formData, setFormData] = useState({
     cardName: '',
@@ -60,9 +61,9 @@ const IssueCard = () => {
                       <SelectValue placeholder="Select currency" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="USD">ðŸ‡ºðŸ‡¸ USD - US Dollar</SelectItem>
-                      <SelectItem value="EUR">ðŸ‡ªðŸ‡º EUR - Euro</SelectItem>
-                      <SelectItem value="MXN">ðŸ‡²ðŸ‡½ MXN - Mexican Peso</SelectItem>
+                      <SelectItem value="USD">Ã°Å¸â€¡ÂºÃ°Å¸â€¡Â¸ USD - US Dollar</SelectItem>
+                      <SelectItem value="EUR">Ã°Å¸â€¡ÂªÃ°Å¸â€¡Âº EUR - Euro</SelectItem>
+                      <SelectItem value="MXN">Ã°Å¸â€¡Â²Ã°Å¸â€¡Â½ MXN - Mexican Peso</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
@@ -124,7 +125,7 @@ const IssueCard = () => {
                   
                   <div className="space-y-4">
                     <div className="text-lg font-mono tracking-wider">
-                      â€¢â€¢â€¢â€¢ â€¢â€¢â€¢â€¢ â€¢â€¢â€¢â€¢ 1234
+                      Ã¢â‚¬Â¢Ã¢â‚¬Â¢Ã¢â‚¬Â¢Ã¢â‚¬Â¢ Ã¢â‚¬Â¢Ã¢â‚¬Â¢Ã¢â‚¬Â¢Ã¢â‚¬Â¢ Ã¢â‚¬Â¢Ã¢â‚¬Â¢Ã¢â‚¬Â¢Ã¢â‚¬Â¢ 1234
                     </div>
                     
                     <div className="flex justify-between items-end">
@@ -150,11 +151,11 @@ const IssueCard = () => {
               <Card className="p-6 bg-gradient-card border-border shadow-card">
                 <h3 className="font-semibold mb-4">Card Features</h3>
                 <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li>â€¢ Worldwide acceptance</li>
-                  <li>â€¢ Real-time transaction notifications</li>
-                  <li>â€¢ Advanced fraud protection</li>
-                  <li>â€¢ Flexible spending controls</li>
-                  <li>â€¢ Instant virtual card activation</li>
+                  <li>Ã¢â‚¬Â¢ Worldwide acceptance</li>
+                  <li>Ã¢â‚¬Â¢ Real-time transaction notifications</li>
+                  <li>Ã¢â‚¬Â¢ Advanced fraud protection</li>
+                  <li>Ã¢â‚¬Â¢ Flexible spending controls</li>
+                  <li>Ã¢â‚¬Â¢ Instant virtual card activation</li>
                 </ul>
               </Card>
             </div>

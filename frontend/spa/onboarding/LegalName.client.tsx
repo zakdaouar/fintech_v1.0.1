@@ -1,4 +1,5 @@
- param($m) $m.Value + "import dynamic from 'next/dynamic';`n" 
+import dynamic from 'next/dynamic';
+
 function LegalName() {
   const navigate = useNavigate();
   const [name, setName] = useState("");

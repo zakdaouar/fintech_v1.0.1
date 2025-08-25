@@ -1,4 +1,5 @@
- param($m) $m.Value + "import dynamic from 'next/dynamic';`n" 
+import dynamic from 'next/dynamic';
+
 const Dashboard = () => {
   const navigate = useNavigate();
   const { toast } = useToast();

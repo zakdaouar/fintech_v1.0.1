@@ -1,4 +1,5 @@
- param($m) $m.Value + "import dynamic from 'next/dynamic';`n" 
+import dynamic from 'next/dynamic';
+
 function maskSSN(value: string) {
   // Force ###-##-#### pattern (digits only)
   const digits = value.replace(/\D/g, '').slice(0, 9);
@@ -151,7 +152,7 @@ const Customers: React.FC = () => {
       <div className="max-w-6xl mx-auto space-y-6">
         <header>
           <h1 className="text-3xl font-bold">Customers</h1>
-          <p className="text-muted-foreground">Bridge Sandbox â€“ KYC auto-approved (sandbox)</p>
+          <p className="text-muted-foreground">Bridge Sandbox Ã¢â‚¬â€œ KYC auto-approved (sandbox)</p>
         </header>
 
         {showHealth && health && !health.key_present && (

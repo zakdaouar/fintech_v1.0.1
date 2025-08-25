@@ -1,4 +1,5 @@
- param($m) $m.Value + "import dynamic from 'next/dynamic';`n" 
+import dynamic from 'next/dynamic';
+
 function Review() {
   const navigate = useNavigate();
   const [confirm, setConfirm] = useState(false);

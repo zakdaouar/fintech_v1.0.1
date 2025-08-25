@@ -1,4 +1,5 @@
- param($m) $m.Value + "import dynamic from 'next/dynamic';`n" 
+import dynamic from 'next/dynamic';
+
 const TTL_MS = 10 * 60 * 1000; // 10 minutes
 
 function TwoFactor() {
@@ -39,7 +40,7 @@ function TwoFactor() {
   };
 
   return (
-    <OnboardingLayout title="Twoâ€‘factor check" description={`Enter the 6â€‘digit code sent to ${email}`} stepIndex={3} totalSteps={18} onBack={() => navigate(-1)}>
+    <OnboardingLayout title="TwoÃ¢â‚¬â€˜factor check" description={`Enter the 6Ã¢â‚¬â€˜digit code sent to ${email}`} stepIndex={3} totalSteps={18} onBack={() => navigate(-1)}>
       <form className="space-y-4" onSubmit={onSubmit}>
         <InputOTP maxLength={6} value={code} onChange={setCode}>
           <InputOTPGroup>

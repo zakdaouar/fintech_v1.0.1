@@ -1,4 +1,5 @@
- param($m) $m.Value + "import dynamic from 'next/dynamic';`n" 
+import dynamic from 'next/dynamic';
+
 function ComplianceLocale() {
   const navigate = useNavigate();
   const [region, setRegion] = useState<Region>("us");
