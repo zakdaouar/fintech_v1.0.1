@@ -1,5 +1,21 @@
 import dynamic from 'next/dynamic';
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
+type CreateCustomerResult = { ok: boolean; status: number; data: any };
+async function createCustomer(payload: any): Promise<CreateCustomerResult> {
+  try {
+    const r = await fetch('/api/customers', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+    let data: any = null;
+    try { data = await r.json(); } catch { data = null; }
+    return { ok: r.ok, status: r.status, data };
+  } catch {
+    return { ok: false, status: 503, data: null };
+  }
+}
+
 
 
 
