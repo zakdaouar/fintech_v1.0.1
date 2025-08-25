@@ -1,20 +1,4 @@
-import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Sidebar } from "@/components/Sidebar";
-import { TopBar } from "@/components/TopBar";
-import { WalletCard } from "@/components/WalletCard";
-import { LoadingSpinner } from "@/components/LoadingSpinner";
-import { Plus, Send, TrendingUp, CreditCard, Building } from "lucide-react";
-import { formatCurrency } from "@/utils/formatters";
-import { apiService, type Balance, type WalletBalance } from "@/utils/api";
-import { useToast } from "@/hooks/use-toast";
-
+ param($m) $m.Value + "import dynamic from 'next/dynamic';`n" 
 const Dashboard = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
@@ -220,5 +204,4 @@ const Dashboard = () => {
     </div>
   );
 };
-
-export default Dashboard;
+export default dynamic(() => Promise.resolve(Dashboard), { ssr: false });

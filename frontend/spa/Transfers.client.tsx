@@ -1,17 +1,4 @@
-import { useState, useEffect } from "react";
-import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Sidebar } from "@/components/Sidebar";
-import { TopBar } from "@/components/TopBar";
-import { TransferItem } from "@/components/TransferItem";
-import { LoadingSpinner } from "@/components/LoadingSpinner";
-import { Send, CheckCircle } from "lucide-react";
-import { apiService, type Transfer } from "@/utils/api";
-import { useToast } from "@/hooks/use-toast";
-
+ param($m) $m.Value + "import dynamic from 'next/dynamic';`n" 
 const Transfers = () => {
   const { toast } = useToast();
   const [transfers, setTransfers] = useState<Transfer[]>([]);
@@ -144,9 +131,9 @@ const Transfers = () => {
                       <SelectValue placeholder="Select currency" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="USD">🇺🇸 USD</SelectItem>
-                      <SelectItem value="EUR">🇪🇺 EUR</SelectItem>
-                      <SelectItem value="MXN">🇲🇽 MXN</SelectItem>
+                      <SelectItem value="USD">ðŸ‡ºðŸ‡¸ USD</SelectItem>
+                      <SelectItem value="EUR">ðŸ‡ªðŸ‡º EUR</SelectItem>
+                      <SelectItem value="MXN">ðŸ‡²ðŸ‡½ MXN</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
@@ -205,5 +192,4 @@ const Transfers = () => {
     </div>
   );
 };
-
-export default Transfers;
+export default dynamic(() => Promise.resolve(Transfers), { ssr: false });

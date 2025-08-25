@@ -1,12 +1,5 @@
-import { Button } from "@/components/ui/button";
-import { Checkbox } from "@/components/ui/checkbox";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { analytics } from "@/utils/analytics";
-import { onboardingApi } from "@/utils/onboardingApi";
-import { OnboardingLayout } from "./OnboardingLayout";
-
-export default function Review() {
+ param($m) $m.Value + "import dynamic from 'next/dynamic';`n" 
+function Review() {
   const navigate = useNavigate();
   const [confirm, setConfirm] = useState(false);
 
@@ -29,3 +22,4 @@ export default function Review() {
     </OnboardingLayout>
   );
 }
+export default dynamic(() => Promise.resolve(Review), { ssr: false });

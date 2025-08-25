@@ -1,13 +1,5 @@
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
-import { analytics } from "@/utils/analytics";
-import { authApi } from "@/utils/onboardingApi";
-import { OnboardingLayout } from "./OnboardingLayout";
-
-export default function Start() {
+ param($m) $m.Value + "import dynamic from 'next/dynamic';`n" 
+function Start() {
   const navigate = useNavigate();
   const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm<{firstName: string; lastName: string; email: string}>();
 
@@ -18,7 +10,7 @@ export default function Start() {
   };
 
   return (
-    <OnboardingLayout title="Create your account" description="We’ll send a confirmation link to your email." stepIndex={0} totalSteps={18}>
+    <OnboardingLayout title="Create your account" description="Weâ€™ll send a confirmation link to your email." stepIndex={0} totalSteps={18}>
       <form className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
         <div>
           <Label htmlFor="firstName">First name</Label>
@@ -42,3 +34,4 @@ export default function Start() {
     </OnboardingLayout>
   );
 }
+export default dynamic(() => Promise.resolve(Start), { ssr: false });

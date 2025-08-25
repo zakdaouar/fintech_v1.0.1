@@ -1,12 +1,5 @@
-import { Button } from "@/components/ui/button";
-import { Label } from "@/components/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { analytics } from "@/utils/analytics";
-import { OnboardingLayout } from "./OnboardingLayout";
-
-export default function AccountType() {
+ param($m) $m.Value + "import dynamic from 'next/dynamic';`n" 
+function AccountType() {
   const navigate = useNavigate();
   const [type, setType] = useState<"personal" | "business">("personal");
 
@@ -33,3 +26,4 @@ export default function AccountType() {
     </OnboardingLayout>
   );
 }
+export default dynamic(() => Promise.resolve(AccountType), { ssr: false });

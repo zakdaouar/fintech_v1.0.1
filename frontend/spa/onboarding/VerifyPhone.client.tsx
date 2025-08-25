@@ -1,13 +1,7 @@
-import { Button } from "@/components/ui/button";
-import { InputOTP, InputOTPGroup, InputOTPSlot } from "@/components/ui/input-otp";
-import { useMemo, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { analytics } from "@/utils/analytics";
-import { OnboardingLayout } from "./OnboardingLayout";
-
+ param($m) $m.Value + "import dynamic from 'next/dynamic';`n" 
 const TTL_MS = 10 * 60 * 1000;
 
-export default function VerifyPhone() {
+function VerifyPhone() {
   const navigate = useNavigate();
   const [code, setCode] = useState("");
   const [sentAt] = useState<number>(Date.now());
@@ -36,3 +30,4 @@ export default function VerifyPhone() {
     </OnboardingLayout>
   );
 }
+export default dynamic(() => Promise.resolve(VerifyPhone), { ssr: false });

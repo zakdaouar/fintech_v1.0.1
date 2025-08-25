@@ -1,13 +1,5 @@
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { useEffect, useState } from "react";
-import { useNavigate, useSearchParams } from "react-router-dom";
-import { analytics } from "@/utils/analytics";
-import { authApi } from "@/utils/onboardingApi";
-import { OnboardingLayout } from "./OnboardingLayout";
-
-export default function ConfirmEmail() {
+ param($m) $m.Value + "import dynamic from 'next/dynamic';`n" 
+function ConfirmEmail() {
   const [params] = useSearchParams();
   const navigate = useNavigate();
   const token = params.get("token") || "";
@@ -28,7 +20,7 @@ export default function ConfirmEmail() {
     e.preventDefault();
     setError(null);
     if (password.length < 8) return setError("Use at least 8 characters.");
-    if (password !== confirm) return setError("Passwords don’t match.");
+    if (password !== confirm) return setError("Passwords donâ€™t match.");
     await authApi.setPassword({ email, password });
     analytics.track({ name: "password_set_success" });
     navigate(`/onboarding/login?email=${encodeURIComponent(email)}`);
@@ -51,3 +43,4 @@ export default function ConfirmEmail() {
     </OnboardingLayout>
   );
 }
+export default dynamic(() => Promise.resolve(ConfirmEmail), { ssr: false });

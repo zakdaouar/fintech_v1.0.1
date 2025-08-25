@@ -1,13 +1,4 @@
-﻿import React, { useEffect, useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
-import { LoadingSpinner } from '@/components/LoadingSpinner';
-import { Badge } from '@/components/ui/badge';
-import { ChevronDown, ChevronRight, Check, X, Shield } from 'lucide-react';
-import { apiService, createCustomer, fetchCustomer, createCustomerNoAuth } from '@/utils/api';
-import { testBalancesApi, testTransfersApi, testCardsApi, testBridgeCreate, testBridgeFetch, testUnauthorized } from '@/utils/tests';
-
+ param($m) $m.Value + "import dynamic from 'next/dynamic';`n" 
 
 interface TestResult {
   name: string;
@@ -33,7 +24,7 @@ const testCoverage = {
 
 const Tests = () => {
 // Check if in development mode
-const isDevelopment = process.env.NODE_ENV -ne "production";
+const isDevelopment = process.env.NODE_ENV !== "production";
 useEffect(() => { document.title = 'Tests | Dev Tools'; }, []);
 
   const [balanceTest, setBalanceTest] = useState<ApiTestState>({
@@ -560,5 +551,4 @@ return (
   </div>
 );
 };
-
-export default Tests;
+export default dynamic(() => Promise.resolve(Tests), { ssr: false });

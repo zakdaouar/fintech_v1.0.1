@@ -1,9 +1,5 @@
-import { Button } from "@/components/ui/button";
-import { useNavigate } from "react-router-dom";
-import { analytics } from "@/utils/analytics";
-import { OnboardingLayout } from "./OnboardingLayout";
-
-export default function Overview() {
+ param($m) $m.Value + "import dynamic from 'next/dynamic';`n" 
+function Overview() {
   const navigate = useNavigate();
 
   const onNext = () => {
@@ -12,7 +8,7 @@ export default function Overview() {
   };
 
   return (
-    <OnboardingLayout title="What’s next" description="You’ll provide an identity document, complete a liveness check, and submit proof of address." stepIndex={11} totalSteps={18} onBack={() => navigate(-1)}>
+    <OnboardingLayout title="Whatâ€™s next" description="Youâ€™ll provide an identity document, complete a liveness check, and submit proof of address." stepIndex={11} totalSteps={18} onBack={() => navigate(-1)}>
       <div className="space-y-4 text-sm text-muted-foreground">
         <ul className="list-disc pl-5 space-y-1">
           <li>Provide identity document</li>
@@ -25,3 +21,4 @@ export default function Overview() {
     </OnboardingLayout>
   );
 }
+export default dynamic(() => Promise.resolve(Overview), { ssr: false });

@@ -1,10 +1,5 @@
-import { Button } from "@/components/ui/button";
-import { useNavigate, useSearchParams } from "react-router-dom";
-import { analytics } from "@/utils/analytics";
-import { onboardingApi } from "@/utils/onboardingApi";
-import { OnboardingLayout } from "./OnboardingLayout";
-
-export default function Liveness() {
+ param($m) $m.Value + "import dynamic from 'next/dynamic';`n" 
+function Liveness() {
   const navigate = useNavigate();
   const [params] = useSearchParams();
   const session = params.get("session") || "mock-session";
@@ -23,3 +18,4 @@ export default function Liveness() {
     </OnboardingLayout>
   );
 }
+export default dynamic(() => Promise.resolve(Liveness), { ssr: false });

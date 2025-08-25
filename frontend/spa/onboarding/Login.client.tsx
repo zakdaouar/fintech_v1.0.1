@@ -1,13 +1,5 @@
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { useEffect, useState } from "react";
-import { useNavigate, useSearchParams } from "react-router-dom";
-import { analytics } from "@/utils/analytics";
-import { authApi } from "@/utils/onboardingApi";
-import { OnboardingLayout } from "./OnboardingLayout";
-
-export default function Login() {
+ param($m) $m.Value + "import dynamic from 'next/dynamic';`n" 
+function Login() {
   const [params] = useSearchParams();
   const navigate = useNavigate();
   const [email, setEmail] = useState(params.get("email") || "");
@@ -31,7 +23,7 @@ export default function Login() {
   };
 
   return (
-    <OnboardingLayout title="Log in" description="We’ll send a 6‑digit code to your email." stepIndex={2} totalSteps={18} onBack={() => navigate(-1)}>
+    <OnboardingLayout title="Log in" description="Weâ€™ll send a 6â€‘digit code to your email." stepIndex={2} totalSteps={18} onBack={() => navigate(-1)}>
       <form className="space-y-4" onSubmit={onSubmit}>
         <div>
           <Label htmlFor="email">Email</Label>
@@ -47,3 +39,4 @@ export default function Login() {
     </OnboardingLayout>
   );
 }
+export default dynamic(() => Promise.resolve(Login), { ssr: false });

@@ -1,13 +1,5 @@
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { analytics } from "@/utils/analytics";
-import { onboardingApi } from "@/utils/onboardingApi";
-import { OnboardingLayout } from "./OnboardingLayout";
-
-export default function DateOfBirth() {
+ param($m) $m.Value + "import dynamic from 'next/dynamic';`n" 
+function DateOfBirth() {
   const navigate = useNavigate();
   const [dob, setDob] = useState("");
 
@@ -27,3 +19,4 @@ export default function DateOfBirth() {
     </OnboardingLayout>
   );
 }
+export default dynamic(() => Promise.resolve(DateOfBirth), { ssr: false });

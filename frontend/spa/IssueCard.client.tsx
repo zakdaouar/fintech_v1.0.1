@@ -1,13 +1,4 @@
-import { useState } from "react";
-import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Sidebar } from "@/components/Sidebar";
-import { TopBar } from "@/components/TopBar";
-import { CreditCard, Wallet } from "lucide-react";
-
+ param($m) $m.Value + "import dynamic from 'next/dynamic';`n" 
 const IssueCard = () => {
   const [formData, setFormData] = useState({
     cardName: '',
@@ -69,9 +60,9 @@ const IssueCard = () => {
                       <SelectValue placeholder="Select currency" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="USD">🇺🇸 USD - US Dollar</SelectItem>
-                      <SelectItem value="EUR">🇪🇺 EUR - Euro</SelectItem>
-                      <SelectItem value="MXN">🇲🇽 MXN - Mexican Peso</SelectItem>
+                      <SelectItem value="USD">ðŸ‡ºðŸ‡¸ USD - US Dollar</SelectItem>
+                      <SelectItem value="EUR">ðŸ‡ªðŸ‡º EUR - Euro</SelectItem>
+                      <SelectItem value="MXN">ðŸ‡²ðŸ‡½ MXN - Mexican Peso</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
@@ -133,7 +124,7 @@ const IssueCard = () => {
                   
                   <div className="space-y-4">
                     <div className="text-lg font-mono tracking-wider">
-                      •••• •••• •••• 1234
+                      â€¢â€¢â€¢â€¢ â€¢â€¢â€¢â€¢ â€¢â€¢â€¢â€¢ 1234
                     </div>
                     
                     <div className="flex justify-between items-end">
@@ -159,11 +150,11 @@ const IssueCard = () => {
               <Card className="p-6 bg-gradient-card border-border shadow-card">
                 <h3 className="font-semibold mb-4">Card Features</h3>
                 <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li>• Worldwide acceptance</li>
-                  <li>• Real-time transaction notifications</li>
-                  <li>• Advanced fraud protection</li>
-                  <li>• Flexible spending controls</li>
-                  <li>• Instant virtual card activation</li>
+                  <li>â€¢ Worldwide acceptance</li>
+                  <li>â€¢ Real-time transaction notifications</li>
+                  <li>â€¢ Advanced fraud protection</li>
+                  <li>â€¢ Flexible spending controls</li>
+                  <li>â€¢ Instant virtual card activation</li>
                 </ul>
               </Card>
             </div>
@@ -173,5 +164,4 @@ const IssueCard = () => {
     </div>
   );
 };
-
-export default IssueCard;
+export default dynamic(() => Promise.resolve(IssueCard), { ssr: false });

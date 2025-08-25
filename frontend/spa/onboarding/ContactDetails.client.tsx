@@ -1,15 +1,7 @@
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
-import { analytics } from "@/utils/analytics";
-import { onboardingApi } from "@/utils/onboardingApi";
-import { OnboardingLayout } from "./OnboardingLayout";
-
+ param($m) $m.Value + "import dynamic from 'next/dynamic';`n" 
 type Contact = { country: string; address1: string; address2?: string; city: string; region: string; postalCode: string; phone: string };
 
-export default function ContactDetails() {
+function ContactDetails() {
   const navigate = useNavigate();
   const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm<Contact>();
 
@@ -60,3 +52,4 @@ export default function ContactDetails() {
     </OnboardingLayout>
   );
 }
+export default dynamic(() => Promise.resolve(ContactDetails), { ssr: false });

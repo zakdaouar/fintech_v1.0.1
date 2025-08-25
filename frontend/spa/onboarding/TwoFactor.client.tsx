@@ -1,14 +1,7 @@
-import { Button } from "@/components/ui/button";
-import { InputOTP, InputOTPGroup, InputOTPSlot } from "@/components/ui/input-otp";
-import { useEffect, useMemo, useState } from "react";
-import { useNavigate, useSearchParams } from "react-router-dom";
-import { analytics } from "@/utils/analytics";
-import { authApi } from "@/utils/onboardingApi";
-import { OnboardingLayout } from "./OnboardingLayout";
-
+ param($m) $m.Value + "import dynamic from 'next/dynamic';`n" 
 const TTL_MS = 10 * 60 * 1000; // 10 minutes
 
-export default function TwoFactor() {
+function TwoFactor() {
   const [params] = useSearchParams();
   const navigate = useNavigate();
   const email = params.get("email") || "";
@@ -46,7 +39,7 @@ export default function TwoFactor() {
   };
 
   return (
-    <OnboardingLayout title="Two‑factor check" description={`Enter the 6‑digit code sent to ${email}`} stepIndex={3} totalSteps={18} onBack={() => navigate(-1)}>
+    <OnboardingLayout title="Twoâ€‘factor check" description={`Enter the 6â€‘digit code sent to ${email}`} stepIndex={3} totalSteps={18} onBack={() => navigate(-1)}>
       <form className="space-y-4" onSubmit={onSubmit}>
         <InputOTP maxLength={6} value={code} onChange={setCode}>
           <InputOTPGroup>
@@ -63,3 +56,4 @@ export default function TwoFactor() {
     </OnboardingLayout>
   );
 }
+export default dynamic(() => Promise.resolve(TwoFactor), { ssr: false });

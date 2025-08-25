@@ -1,15 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Separator } from '@/components/ui/separator';
-import { Alert, AlertDescription } from '@/components/ui/alert';
-import { useToast } from '@/hooks/use-toast';
-import { createCustomer, fetchCustomer, bridgeHealth } from '@/utils/api';
-import { LoadingSpinner } from '@/components/LoadingSpinner';
-import { CheckCircle2, AlertTriangle } from 'lucide-react';
-
+ param($m) $m.Value + "import dynamic from 'next/dynamic';`n" 
 function maskSSN(value: string) {
   // Force ###-##-#### pattern (digits only)
   const digits = value.replace(/\D/g, '').slice(0, 9);
@@ -162,7 +151,7 @@ const Customers: React.FC = () => {
       <div className="max-w-6xl mx-auto space-y-6">
         <header>
           <h1 className="text-3xl font-bold">Customers</h1>
-          <p className="text-muted-foreground">Bridge Sandbox – KYC auto-approved (sandbox)</p>
+          <p className="text-muted-foreground">Bridge Sandbox â€“ KYC auto-approved (sandbox)</p>
         </header>
 
         {showHealth && health && !health.key_present && (
@@ -336,5 +325,4 @@ const Customers: React.FC = () => {
     </main>
   );
 };
-
-export default Customers;
+export default dynamic(() => Promise.resolve(Customers), { ssr: false });

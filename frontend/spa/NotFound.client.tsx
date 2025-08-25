@@ -1,6 +1,4 @@
-import { useLocation } from "react-router-dom";
-import { useEffect } from "react";
-
+ param($m) $m.Value + "import dynamic from 'next/dynamic';`n" 
 const NotFound = () => {
   const location = useLocation();
 
@@ -23,5 +21,4 @@ const NotFound = () => {
     </div>
   );
 };
-
-export default NotFound;
+export default dynamic(() => Promise.resolve(NotFound), { ssr: false });

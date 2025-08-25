@@ -1,13 +1,5 @@
-import { Button } from "@/components/ui/button";
-import { Label } from "@/components/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { analytics } from "@/utils/analytics";
-import { onboardingApi, Region } from "@/utils/onboardingApi";
-import { OnboardingLayout } from "./OnboardingLayout";
-
-export default function ComplianceLocale() {
+ param($m) $m.Value + "import dynamic from 'next/dynamic';`n" 
+function ComplianceLocale() {
   const navigate = useNavigate();
   const [region, setRegion] = useState<Region>("us");
 
@@ -35,3 +27,4 @@ export default function ComplianceLocale() {
     </OnboardingLayout>
   );
 }
+export default dynamic(() => Promise.resolve(ComplianceLocale), { ssr: false });
