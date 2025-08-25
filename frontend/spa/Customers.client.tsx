@@ -1,6 +1,18 @@
 import dynamic from 'next/dynamic';
 import { useEffect, useState, useMemo } from 'react';
-import { useToast } from '../src/components/ui/use-toast';
+import { useToast } from '../src/components/ui/use-toast';
+async function createCustomer(payload: any): Promise<Response> {
+  try {
+    return await fetch('/api/customers', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+  } catch {
+    return new Response('{}', { status: 503 });
+  }
+}
+
 const bridgeHealth = async (..._args:any[]) => ({ ok: false } as any);
 
 
@@ -156,7 +168,7 @@ const Customers: React.FC = () => {
       <div className="max-w-6xl mx-auto space-y-6">
         <header>
           <h1 className="text-3xl font-bold">Customers</h1>
-          <p className="text-muted-foreground">Bridge Sandbox ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“ KYC auto-approved (sandbox)</p>
+          <p className="text-muted-foreground">Bridge Sandbox ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œ KYC auto-approved (sandbox)</p>
         </header>
 
         {showHealth && health && !health.key_present && (
