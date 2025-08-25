@@ -1,3 +1,3 @@
 import dynamic from 'next/dynamic';
-const Page = dynamic(() => import('./Tests.client'), { ssr: false });
+const Page = dynamic(() => import('../../spa/Tests.client.tsx'), { ssr: false });
 export default Page;

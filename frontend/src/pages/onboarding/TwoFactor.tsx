@@ -1,3 +1,3 @@
 import dynamic from 'next/dynamic';
-const Page = dynamic(() => import('./TwoFactor.client'), { ssr: false });
+const Page = dynamic(() => import('../../../spa/onboarding/TwoFactor.client.tsx'), { ssr: false });
 export default Page;

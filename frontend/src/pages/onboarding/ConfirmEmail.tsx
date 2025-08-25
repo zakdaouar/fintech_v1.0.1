@@ -1,3 +1,3 @@
 import dynamic from 'next/dynamic';
-const Page = dynamic(() => import('./ConfirmEmail.client'), { ssr: false });
+const Page = dynamic(() => import('../../../spa/onboarding/ConfirmEmail.client.tsx'), { ssr: false });
 export default Page;
