@@ -7,7 +7,9 @@ import { useState } from "react";
 import { useNavigate } from 'next/link';
 import { analytics } from "@/utils/analytics";
 import { onboardingApi, Region } from "@/utils/onboardingApi";
-import { OnboardingLayout } from "./OnboardingLayout";
+import { OnboardingLayout } from "./OnboardingLayout";
+import { Button, Label, OnboardingLayout, RadioGroup, RadioGroupItem, Region } from 'lucide-react';
+
 
 function ComplianceLocale() {
   const navigate = useRouter();

@@ -5,7 +5,9 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useForm } from "react-hook-form";
 import { useToast } from "@/components/ui/use-toast";
-import { createCustomerNoAuth } from "@/utils/api";
+import { createCustomerNoAuth } from "@/utils/api";
+import { Button, Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, Input, Label, RegisterDialogProps, RegisterFormValues } from 'lucide-react';
+
 
 interface RegisterDialogProps {
   open: boolean;

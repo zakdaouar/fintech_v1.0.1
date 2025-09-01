@@ -7,7 +7,9 @@ import { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from 'next/link';
 import { analytics } from "@/utils/analytics";
 import { authApi } from "@/utils/onboardingApi";
-import { OnboardingLayout } from "./OnboardingLayout";
+import { OnboardingLayout } from "./OnboardingLayout";
+import { Button, Input, Label, OnboardingLayout } from 'lucide-react';
+
 
 function ConfirmEmail() {
   const [params] = useSearchParams();
@@ -30,7 +32,7 @@ function ConfirmEmail() {
     e.preventDefault();
     setError(null);
     if (password.length < 8) return setError("Use at least 8 characters.");
-    if (password !== confirm) return setError("Passwords donÃ¢â‚¬â„¢t match.");
+    if (password !== confirm) return setError("Passwords donÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢t match.");
     await authApi.setPassword({ email, password });
     analytics.track({ name: "password_set_success" });
     router.push(`/onboarding/login?email=${encodeURIComponent(email)}`);

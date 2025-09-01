@@ -1,15 +1,14 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 /* eslint-disable react/no-unescaped-entities */
-import { Button } from "@/components/ui/button";
-# fixed: import { orphelin supprimé
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Bell, Settings, LogOut, User } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Bell, Button, DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger, LogOut, Settings, User } from 'lucide-react';
 
+
+
+
+
+} from "@/components/ui/dropdown-menu";
 export const TopBar = () => {
   const router = useRouter();
   return (

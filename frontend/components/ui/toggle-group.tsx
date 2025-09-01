@@ -3,7 +3,9 @@ import * as ToggleGroupPrimitive from "@radix-ui/react-toggle-group"
 import { type VariantProps } from '@/lib/shims/cva'
 
 import { cn } from "@/lib/utils"
-import { toggleVariants } from "@/components/ui/toggle"
+import { toggleVariants } from "@/components/ui/toggle"
+import { ToggleGroupPrimitive } from 'lucide-react';
+
 
 const ToggleGroupContext = React.createContext<
   VariantProps<typeof toggleVariants>

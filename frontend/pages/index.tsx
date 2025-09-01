@@ -2,9 +2,8 @@ import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { useNavigate } from 'next/link';
-import { Wallet, Shield, TrendingUp, Globe } from "lucide-react";
-
+import { useNavigate } from 'next/link';
+import { Button, Card, Globe, Shield, TrendingUp, Wallet } from 'lucide-react';
 
 const Index = () => {
   const navigate = useRouter();

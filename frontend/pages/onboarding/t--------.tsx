@@ -6,7 +6,9 @@ import { useEffect, useMemo, useState } from "react";
 import { useNavigate, useSearchParams } from 'next/link';
 import { analytics } from "@/utils/analytics";
 import { authApi } from "@/utils/onboardingApi";
-import { OnboardingLayout } from "./OnboardingLayout";
+import { OnboardingLayout } from "./OnboardingLayout";
+import { Button, InputOTP, InputOTPGroup, InputOTPSlot, OnboardingLayout } from 'lucide-react';
+
 
 const TTL_MS = 10 * 60 * 1000; // 10 minutes
 
@@ -48,7 +50,7 @@ function TwoFactor() {
   };
 
   return (
-    <OnboardingLayout title="TwoÃ¢â‚¬â€˜factor check" description={`Enter the 6Ã¢â‚¬â€˜digit code sent to ${email}`} stepIndex={3} totalSteps={18} onBack={() => router.push(-1)}>
+    <OnboardingLayout title="TwoÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Ëœfactor check" description={`Enter the 6ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Ëœdigit code sent to ${email}`} stepIndex={3} totalSteps={18} onBack={() => router.push(-1)}>
       <form className="space-y-4" onSubmit={onSubmit}>
         <InputOTP maxLength={6} value={code} onChange={setCode}>
           <InputOTPGroup>

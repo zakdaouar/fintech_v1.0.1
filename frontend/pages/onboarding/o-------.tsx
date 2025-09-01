@@ -3,7 +3,9 @@ import { useRouter } from 'next/router';
 import { Button } from "@/components/ui/button";
 import { useNavigate } from 'next/link';
 import { analytics } from "@/utils/analytics";
-import { OnboardingLayout } from "./OnboardingLayout";
+import { OnboardingLayout } from "./OnboardingLayout";
+import { Button, OnboardingLayout } from 'lucide-react';
+
 
 function Overview() {
   const navigate = useRouter();
@@ -14,7 +16,7 @@ function Overview() {
   };
 
   return (
-    <OnboardingLayout title="WhatÃ¢â‚¬â„¢s next" description="YouÃ¢â‚¬â„¢ll provide an identity document, complete a liveness check, and submit proof of address." stepIndex={11} totalSteps={18} onBack={() => router.push(-1)}>
+    <OnboardingLayout title="WhatÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢s next" description="YouÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ll provide an identity document, complete a liveness check, and submit proof of address." stepIndex={11} totalSteps={18} onBack={() => router.push(-1)}>
       <div className="space-y-4 text-sm text-muted-foreground">
         <ul className="list-disc pl-5 space-y-1">
           <li>Provide identity document</li>

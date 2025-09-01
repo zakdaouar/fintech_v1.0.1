@@ -7,7 +7,9 @@ import { useRef, useState } from "react";
 import { useNavigate } from 'next/link';
 import { analytics } from "@/utils/analytics";
 import { onboardingApi } from "@/utils/onboardingApi";
-import { OnboardingLayout } from "./OnboardingLayout";
+import { OnboardingLayout } from "./OnboardingLayout";
+import { Button, HTMLInputElement, Input, Label, OnboardingLayout } from 'lucide-react';
+
 
 function ProofOfAddress() {
   const navigate = useRouter();

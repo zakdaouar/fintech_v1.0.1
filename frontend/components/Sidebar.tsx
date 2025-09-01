@@ -1,9 +1,9 @@
+import Link from 'next/link';
+import { Wallet } from 'lucide-react';
 
-# fixed: ligne import { orpheline supprimée
-import Link from 'next/link';
-  LayoutDashboard, 
-  ArrowLeftRight, 
-  CreditCard,
+
+
+
   Wallet
 } from "lucide-react";
 

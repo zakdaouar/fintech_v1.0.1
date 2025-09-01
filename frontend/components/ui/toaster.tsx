@@ -1,11 +1,12 @@
-import { useToast } from "@/hooks/use-toast"
-# fixed: import { orphelin supprimé
-  Toast,
-  ToastClose,
-  ToastDescription,
-  ToastProvider,
-  ToastTitle,
-  ToastViewport,
+import { useToast } from "@/hooks/use-toast"
+import { Toast, ToastClose, ToastDescription, ToastProvider, ToastTitle, ToastViewport } from 'lucide-react';
+
+
+
+
+
+
+
 } from "@/components/ui/toast"
 
 export function Toaster() {

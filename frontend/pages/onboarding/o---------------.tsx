@@ -3,7 +3,9 @@ import { useRouter } from 'next/router';
 import { Progress } from "@/components/ui/progress";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { useEffect } from "react";
+import { useEffect } from "react";
+import { Button, Card, Progress } from 'lucide-react';
+
 
 export type LayoutProps = {
   title: string;
@@ -18,14 +20,14 @@ export const OnboardingLayout = ({ title, description, stepIndex, totalSteps, on
   const percent = Math.round(((stepIndex + 1) / totalSteps) * 100);
 
   useEffect(() => {
-    document.title = `${title} Ã‚Â· Onboarding`;
+    document.title = `${title} Ãƒâ€šÃ‚Â· Onboarding`;
   }, [title]);
 
   return (
     <main className="min-h-screen flex items-center justify-center p-6">
       <Card className="w-full max-w-xl p-6 bg-gradient-card border-border">
         <div className="mb-5 flex items-center justify-between">
-          <p className="text-sm text-muted-foreground">Step {stepIndex + 1} of {totalSteps} Ã‚Â· {percent}%</p>
+          <p className="text-sm text-muted-foreground">Step {stepIndex + 1} of {totalSteps} Ãƒâ€šÃ‚Â· {percent}%</p>
           {onBack && (
             <Button variant="outline" onClick={onBack}>Back</Button>
           )}

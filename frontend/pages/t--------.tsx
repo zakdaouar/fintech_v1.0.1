@@ -10,9 +10,10 @@ import { Sidebar } from "@/components/Sidebar";
 import { TopBar } from "@/components/TopBar";
 import { TransferItem } from "@/components/TransferItem";
 import { LoadingSpinner } from "@/components/LoadingSpinner";
-import { Send, CheckCircle } from "lucide-react";
 import { apiService, type Transfer } from "@/utils/api";
-import { useToast } from "@/hooks/use-toast";
+import { useToast } from "@/hooks/use-toast";
+import { Button, Card, Input, Label, LoadingSpinner, Select, SelectContent, SelectItem, SelectTrigger, SelectValue, Send, Transfer, TransferItem } from 'lucide-react';
+
 
 const Transfers = () => {
   const { toast } = useToast();
@@ -146,9 +147,9 @@ const Transfers = () => {
                       <SelectValue placeholder="Select currency" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="USD">Ã°Å¸â€¡ÂºÃ°Å¸â€¡Â¸ USD</SelectItem>
-                      <SelectItem value="EUR">Ã°Å¸â€¡ÂªÃ°Å¸â€¡Âº EUR</SelectItem>
-                      <SelectItem value="MXN">Ã°Å¸â€¡Â²Ã°Å¸â€¡Â½ MXN</SelectItem>
+                      <SelectItem value="USD">ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚ÂºÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â¸ USD</SelectItem>
+                      <SelectItem value="EUR">ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚ÂªÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Âº EUR</SelectItem>
+                      <SelectItem value="MXN">ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â²ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â½ MXN</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>

@@ -7,7 +7,9 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from 'next/link';
 import { analytics } from "@/utils/analytics";
 import { authApi } from "@/utils/onboardingApi";
-import { OnboardingLayout } from "./OnboardingLayout";
+import { OnboardingLayout } from "./OnboardingLayout";
+import { Button, Input, Label, OnboardingLayout } from 'lucide-react';
+
 
 function Start() {
   const navigate = useRouter();
@@ -20,7 +22,7 @@ function Start() {
   };
 
   return (
-    <OnboardingLayout title="Create your account" description="WeÃ¢â‚¬â„¢ll send a confirmation link to your email." stepIndex={0} totalSteps={18}>
+    <OnboardingLayout title="Create your account" description="WeÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ll send a confirmation link to your email." stepIndex={0} totalSteps={18}>
       <form className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
         <div>
           <Label htmlFor="firstName">First name</Label>

@@ -6,7 +6,9 @@ import { useState } from "react";
 import { useNavigate } from 'next/link';
 import { analytics } from "@/utils/analytics";
 import { onboardingApi } from "@/utils/onboardingApi";
-import { OnboardingLayout } from "./OnboardingLayout";
+import { OnboardingLayout } from "./OnboardingLayout";
+import { Button, Checkbox, OnboardingLayout } from 'lucide-react';
+
 
 function Review() {
   const navigate = useRouter();

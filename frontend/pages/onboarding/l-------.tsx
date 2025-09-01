@@ -4,7 +4,9 @@ import { Button } from "@/components/ui/button";
 import { useNavigate, useSearchParams } from 'next/link';
 import { analytics } from "@/utils/analytics";
 import { onboardingApi } from "@/utils/onboardingApi";
-import { OnboardingLayout } from "./OnboardingLayout";
+import { OnboardingLayout } from "./OnboardingLayout";
+import { Button, OnboardingLayout } from 'lucide-react';
+
 
 function Liveness() {
   const navigate = useRouter();

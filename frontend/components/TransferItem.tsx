@@ -1,8 +1,9 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowUpRight } from "lucide-react";
 import { formatCurrency, formatDate, getStatusColor } from "@/utils/formatters";
-import type { Transfer } from "@/utils/api";
+import type { Transfer } from "@/utils/api";
+import { ArrowUpRight, Badge, Card } from 'lucide-react';
+
 
 interface TransferItemProps {
   transfer: Transfer;

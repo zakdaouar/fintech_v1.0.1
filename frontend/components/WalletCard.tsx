@@ -1,7 +1,9 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { formatCurrency, getStatusColor } from "@/utils/formatters";
-import type { WalletBalance } from "@/utils/api";
+import type { WalletBalance } from "@/utils/api";
+import { Badge, Card } from 'lucide-react';
+
 
 interface WalletCardProps {
   wallet: WalletBalance;

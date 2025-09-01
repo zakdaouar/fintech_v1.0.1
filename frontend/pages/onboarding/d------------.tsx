@@ -8,7 +8,9 @@ import { useState } from "react";
 import { useNavigate } from 'next/link';
 import { analytics } from "@/utils/analytics";
 import { onboardingApi } from "@/utils/onboardingApi";
-import { OnboardingLayout } from "./OnboardingLayout";
+import { OnboardingLayout } from "./OnboardingLayout";
+import { Button, Input, Label, OnboardingLayout, Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from 'lucide-react';
+
 
 function DocumentSetup() {
   const navigate = useRouter();

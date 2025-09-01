@@ -6,9 +6,10 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 import { LoadingSpinner } from '@/components/LoadingSpinner';
 import { Badge } from '@/components/ui/badge';
-import { ChevronDown, ChevronRight, Check, X, Shield } from 'lucide-react';
 import { apiService, createCustomer, fetchCustomer, createCustomerNoAuth } from '@/utils/api';
-import { testBalancesApi, testTransfersApi, testCardsApi, testBridgeCreate, testBridgeFetch, testUnauthorized } from '@/utils/tests';
+import { testBalancesApi, testTransfersApi, testCardsApi, testBridgeCreate, testBridgeFetch, testUnauthorized } from '@/utils/tests';
+import { ApiTestState, Badge, Button, Card, CardContent, CardHeader, CardTitle, Check, ChevronDown, ChevronRight, Collapsible, CollapsibleContent, CollapsibleTrigger, LoadingSpinner, Shield, X } from 'lucide-react';
+
 
 
 interface TestResult {

@@ -6,7 +6,9 @@ import { Label } from "@/components/ui/label";
 import { useState } from "react";
 import { useNavigate } from 'next/link';
 import { analytics } from "@/utils/analytics";
-import { OnboardingLayout } from "./OnboardingLayout";
+import { OnboardingLayout } from "./OnboardingLayout";
+import { Button, Input, Label, OnboardingLayout } from 'lucide-react';
+
 
 function LegalName() {
   const navigate = useRouter();

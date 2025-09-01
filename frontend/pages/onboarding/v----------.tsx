@@ -5,7 +5,9 @@ import { InputOTP, InputOTPGroup, InputOTPSlot } from "@/components/ui/input-otp
 import { useMemo, useState } from "react";
 import { useNavigate } from 'next/link';
 import { analytics } from "@/utils/analytics";
-import { OnboardingLayout } from "./OnboardingLayout";
+import { OnboardingLayout } from "./OnboardingLayout";
+import { Button, InputOTP, InputOTPGroup, InputOTPSlot, OnboardingLayout } from 'lucide-react';
+
 
 const TTL_MS = 10 * 60 * 1000;
 

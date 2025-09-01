@@ -2,10 +2,10 @@ import * as React from "react"
 import useEmblaCarousel, {
   type UseEmblaCarouselType,
 } from "embla-carousel-react"
-import { ArrowLeft, ArrowRight } from "lucide-react"
-
 import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button"
+import { ArrowLeft, ArrowRight, Button, CarouselContextProps, HTMLDivElement } from 'lucide-react';
+
 
 type CarouselApi = UseEmblaCarouselType[1]
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>
@@ -41,7 +41,7 @@ function useCarousel() {
 }
 
 const Carousel = React.forwardRef<
-  HTMLDivElement,
+
   React.HTMLAttributes<HTMLDivElement> & CarouselProps
 >(
   (
@@ -149,7 +149,7 @@ const Carousel = React.forwardRef<
 Carousel.displayName = "Carousel"
 
 const CarouselContent = React.forwardRef<
-  HTMLDivElement,
+
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => {
   const { carouselRef, orientation } = useCarousel()
@@ -171,7 +171,7 @@ const CarouselContent = React.forwardRef<
 CarouselContent.displayName = "CarouselContent"
 
 const CarouselItem = React.forwardRef<
-  HTMLDivElement,
+
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => {
   const { orientation } = useCarousel()
@@ -193,7 +193,7 @@ const CarouselItem = React.forwardRef<
 CarouselItem.displayName = "CarouselItem"
 
 const CarouselPrevious = React.forwardRef<
-  HTMLButtonElement,
+
   React.ComponentProps<typeof Button>
 >(({ className, variant = "outline", size = "icon", ...props }, ref) => {
   const { orientation, scrollPrev, canScrollPrev } = useCarousel()
@@ -222,7 +222,7 @@ const CarouselPrevious = React.forwardRef<
 CarouselPrevious.displayName = "CarouselPrevious"
 
 const CarouselNext = React.forwardRef<
-  HTMLButtonElement,
+
   React.ComponentProps<typeof Button>
 >(({ className, variant = "outline", size = "icon", ...props }, ref) => {
   const { orientation, scrollNext, canScrollNext } = useCarousel()
@@ -252,9 +252,9 @@ CarouselNext.displayName = "CarouselNext"
 
 export {
   type CarouselApi,
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselPrevious,
-  CarouselNext,
+
+
+
+
+
 }

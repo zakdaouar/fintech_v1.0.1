@@ -7,7 +7,9 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from 'next/link';
 import { analytics } from "@/utils/analytics";
 import { onboardingApi } from "@/utils/onboardingApi";
-import { OnboardingLayout } from "./OnboardingLayout";
+import { OnboardingLayout } from "./OnboardingLayout";
+import { Button, Contact, Input, Label, OnboardingLayout } from 'lucide-react';
+
 
 type Contact = { country: string; address1: string; address2?: string; city: string; region: string; postalCode: string; phone: string };
 

@@ -9,8 +9,8 @@ import { Separator } from '@/components/ui/separator';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { useToast } from '@/hooks/use-toast';
 import { createCustomer, fetchCustomer, bridgeHealth } from '@/utils/api';
-import { LoadingSpinner } from '@/components/LoadingSpinner';
-import { CheckCircle2, AlertTriangle } from 'lucide-react';
+import { LoadingSpinner } from '@/components/LoadingSpinner';
+import { Alert, AlertDescription, AlertTriangle, Button, Card, CardContent, CardDescription, CardHeader, CardTitle, CheckCircle2, CustomerForm, Input, Label, LoadingSpinner, Separator } from 'lucide-react';
 
 function maskSSN(value: string) {
   // Force ###-##-#### pattern (digits only)
@@ -164,7 +164,7 @@ const Customers: React.FC = () => {
       <div className="max-w-6xl mx-auto space-y-6">
         <header>
           <h1 className="text-3xl font-bold">Customers</h1>
-          <p className="text-muted-foreground">Bridge Sandbox ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“ KYC auto-approved (sandbox)</p>
+          <p className="text-muted-foreground">Bridge Sandbox ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œ KYC auto-approved (sandbox)</p>
         </header>
 
         {showHealth && health && !health.key_present && (

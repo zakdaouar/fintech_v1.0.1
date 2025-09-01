@@ -3,7 +3,9 @@ import { useRouter } from 'next/router';
 import { Button } from "@/components/ui/button";
 import { useNavigate } from 'next/link';
 import { analytics } from "@/utils/analytics";
-import { OnboardingLayout } from "./OnboardingLayout";
+import { OnboardingLayout } from "./OnboardingLayout";
+import { Button, OnboardingLayout } from 'lucide-react';
+
 
 function Submitted() {
   const navigate = useRouter();
@@ -14,7 +16,7 @@ function Submitted() {
   };
 
   return (
-    <OnboardingLayout title="Submitted" description="WeÃ¢â‚¬â„¢re reviewing your details. YouÃ¢â‚¬â„¢ll have limited access until approval." stepIndex={17} totalSteps={18}>
+    <OnboardingLayout title="Submitted" description="WeÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢re reviewing your details. YouÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ll have limited access until approval." stepIndex={17} totalSteps={18}>
       <div className="space-y-4">
         <Button className="w-full" onClick={onNext}>Go to dashboard</Button>
       </div>

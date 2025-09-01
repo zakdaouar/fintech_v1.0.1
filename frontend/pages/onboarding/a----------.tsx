@@ -6,7 +6,9 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { useState } from "react";
 import { useNavigate } from 'next/link';
 import { analytics } from "@/utils/analytics";
-import { OnboardingLayout } from "./OnboardingLayout";
+import { OnboardingLayout } from "./OnboardingLayout";
+import { Button, Label, OnboardingLayout, RadioGroup, RadioGroupItem } from 'lucide-react';
+
 
 function AccountType() {
   const navigate = useRouter();

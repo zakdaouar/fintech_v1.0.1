@@ -12,10 +12,11 @@ import { Sidebar } from "@/components/Sidebar";
 import { TopBar } from "@/components/TopBar";
 import { WalletCard } from "@/components/WalletCard";
 import { LoadingSpinner } from "@/components/LoadingSpinner";
-import { Plus, Send, TrendingUp, CreditCard, Building } from "lucide-react";
 import { formatCurrency } from "@/utils/formatters";
 import { apiService, type Balance, type WalletBalance } from "@/utils/api";
-import { useToast } from "@/hooks/use-toast";
+import { useToast } from "@/hooks/use-toast";
+import { Balance, Building, Button, Card, CreditCard, Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger, Input, Label, LoadingSpinner, Plus, Select, SelectContent, SelectItem, SelectTrigger, SelectValue, Send, TrendingUp, WalletBalance, WalletCard } from 'lucide-react';
+
 
 const Dashboard = () => {
   const navigate = useRouter();
