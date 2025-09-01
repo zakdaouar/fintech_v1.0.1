@@ -1,133 +1,76 @@
-import Head from "next/head";
-import Link from "next/link";
-import { ArrowRight, Users, CreditCard, Send, HeartPulse } from "lucide-react";
+import dynamic from 'next/dynamic';
+import { useRouter } from 'next/router';
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { useNavigate } from 'next/link';
+import { Wallet, Shield, TrendingUp, Globe } from "lucide-react";
 
-export default function Home() {
+
+const Index = () => {
+  const navigate = useRouter();
+  
+
   return (
-    <>
-      <Head>
-        <title>Remoove – Fintech Sandbox</title>
-        <meta name="description" content="Frontend sandbox to exercise the Remoove/Bridge backend APIs." />
-      </Head>
-
-      <div className="relative min-h-screen overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
-        {/* Background layers */}
-        <div className="pointer-events-none absolute inset-0">
-          <div className="absolute inset-0 bg-radials" />
-          <div className="absolute inset-0 bg-grid" />
-        </div>
-
-        {/* Header */}
-        <header className="relative z-10 flex items-center justify-between px-6 py-4">
-          <div className="flex items-center gap-3">
-            <div className="h-9 w-9 rounded-lg bg-primary/20 ring-1 ring-primary/50" />
-            <span className="text-lg font-semibold tracking-wide">Remoove Tester</span>
-          </div>
-          <nav className="hidden md:flex items-center gap-6 text-sm text-muted-foreground">
-            <a className="hover:text-foreground transition-colors" href="https://vercel.com/docs" target="_blank" rel="noreferrer">Docs</a>
-            <a className="hover:text-foreground transition-colors" href="https://github.com" target="_blank" rel="noreferrer">GitHub</a>
-          </nav>
-        </header>
-
-        {/* Hero */}
-        <main className="relative z-10 px-6">
-          <section className="mx-auto max-w-5xl py-16 text-center">
-            <h1 className="mx-auto max-w-3xl text-4xl md:text-6xl font-bold tracking-tight">
-              Testez vos APIs{" "}
-              <span className="bg-gradient-to-r from-sky-400 to-emerald-400 bg-clip-text text-transparent">
-                Remoove / Bridge
-              </span>
-              {" "}en toute simplicité
-            </h1>
-            <p className="mt-4 text-lg text-muted-foreground">
-              Un starter frontend prêt pour Vercel : SSR sûr, pas de localStorage côté serveur, et aucun react-router.
-            </p>
-
-            <div className="mt-8 flex items-center justify-center gap-3">
-              <Link
-                href="/customers"
-                className="inline-flex items-center gap-2 rounded-lg bg-white/90 px-4 py-2 text-slate-900 hover:bg-white"
-              >
-                Commencer
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-              <a
-                href="https://render.com"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-lg glass px-4 py-2"
-              >
-                Backend (Render)
-              </a>
+    <div className="min-h-screen bg-gradient-hero flex items-center justify-center p-4">
+      <div className="max-w-4xl mx-auto text-center">
+        {/* Hero Section */}
+        <div className="mb-12">
+          <div className="mb-6">
+            <div className="inline-flex items-center justify-center p-3 rounded-full bg-gradient-primary mb-4">
+              <Wallet className="h-8 w-8 text-white" />
             </div>
-          </section>
-
-          {/* Feature grid */}
-          <section className="mx-auto grid max-w-5xl grid-cols-1 gap-4 pb-24 md:grid-cols-2 lg:grid-cols-4">
-            <FeatureCard
-              href="/customers"
-              title="Customers"
-              description="Créer et lister des clients dans le sandbox."
-              Icon={Users}
-            />
-            <FeatureCard
-              href="/transfers"
-              title="Transfers"
-              description="Simuler des virements entre comptes."
-              Icon={Send}
-            />
-            <FeatureCard
-              href="/cards"
-              title="Issue card"
-              description="Émettre des cartes virtuelles de test."
-              Icon={CreditCard}
-            />
-            <FeatureCard
-              href="/health"
-              title="Sandbox health"
-              description="Vérifier la configuration des clés côté serveur."
-              Icon={HeartPulse}
-            />
-          </section>
-        </main>
-
-        {/* Footer */}
-        <footer className="relative z-10 border-t border-white/10 px-6 py-6 text-center text-xs text-muted-foreground">
-          Fait avec Next.js 14 + Tailwind. Déployable sans douleur sur Vercel.
-        </footer>
-      </div>
-    </>
-  );
-}
-
-type IconType = React.ComponentType<{ className?: string }>;
-
-function FeatureCard({
-  href,
-  title,
-  description,
-  Icon
-}: {
-  href: string;
-  title: string;
-  description: string;
-  Icon: IconType;
-}) {
-  return (
-    <Link
-      href={href}
-      className="group glass relative block rounded-xl p-5"
-    >
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <div className="rounded-md bg-primary/15 p-2 ring-1 ring-primary/40">
-            <Icon className="h-5 w-5" />
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              Next-Gen Banking
+            </h1>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+              Experience the future of finance with our secure, intelligent, and globally connected platform. 
+              Manage your money with confidence.
+            </p>
           </div>
-          <h3 className="text-base font-semibold">{title}</h3>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+            <Button 
+              size="lg" 
+              className="bg-gradient-primary hover:opacity-90 text-white font-semibold px-8 py-6 text-lg rounded-xl shadow-xl-custom"
+              onClick={() => router.push('/dashboard')}
+            >
+              Login to Dashboard
+            </Button>
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="border-primary/30 hover:bg-primary/10 font-semibold px-8 py-6 text-lg rounded-xl"
+              onClick={() => router.push('/onboarding/start')}
+            >
+              Register Now
+            </Button>
+          </div>
         </div>
-        <ArrowRight className="h-4 w-4 opacity-50 transition group-hover:translate-x-1 group-hover:opacity-100" />
+
+        {/* Feature Cards */}
+        <div className="grid md:grid-cols-3 gap-6">
+          <Card className="p-6 bg-gradient-card border-border shadow-card hover:shadow-lg-custom transition-all duration-300">
+            <Shield className="h-10 w-10 text-primary mb-4 mx-auto" />
+            <h3 className="text-lg font-semibold mb-2">Bank-Grade Security</h3>
+            <p className="text-muted-foreground">Your funds are protected with enterprise-level encryption and multi-factor authentication.</p>
+          </Card>
+          
+          <Card className="p-6 bg-gradient-card border-border shadow-card hover:shadow-lg-custom transition-all duration-300">
+            <TrendingUp className="h-10 w-10 text-accent mb-4 mx-auto" />
+            <h3 className="text-lg font-semibold mb-2">Smart Analytics</h3>
+            <p className="text-muted-foreground">Get insights into your spending patterns and optimize your financial decisions.</p>
+          </Card>
+          
+          <Card className="p-6 bg-gradient-card border-border shadow-card hover:shadow-lg-custom transition-all duration-300">
+            <Globe className="h-10 w-10 text-success mb-4 mx-auto" />
+            <h3 className="text-lg font-semibold mb-2">Global Reach</h3>
+            <p className="text-muted-foreground">Send money worldwide with competitive rates and instant transfers.</p>
+          </Card>
+        </div>
       </div>
-      <p className="mt-2 text-sm text-muted-foreground">{description}</p>
-    </Link>
+    </div>
   );
-}
+};
+
+export default dynamic(() => Promise.resolve(Index), { ssr: false });
