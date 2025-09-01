@@ -77,7 +77,7 @@ const Customers: React.FC = () => {
   const [createErr, setCreateErr] = useState<any | null>(null);
 
   const [fetching, setFetching] = useState(false);
-  const [fetchId, setFetchId] = useState<string>(typeof window !== 'undefined' ? localStorage.getItem('last_customer_id') || '');
+  const [fetchId, setFetchId] = useState<string>((typeof window === 'undefined' ? null : localStorage.getItem()) || '');
   const [fetchRes, setFetchRes] = useState<any | null>(null);
   const [fetchErr, setFetchErr] = useState<any | null>(null);
 
@@ -130,7 +130,7 @@ const Customers: React.FC = () => {
       setCreateRes(res.data);
       const id = (res.data as any).id;
       if (id) {
-        typeof window !== 'undefined' ? localStorage.setItem('last_customer_id', id);
+        (typeof window === 'undefined' ? void 0 : localStorage.setItem());
         setFetchId(id);
       }
       toast({ title: 'Customer created', description: 'Sandbox KYC auto-approved.' });
@@ -164,7 +164,7 @@ const Customers: React.FC = () => {
       <div className="max-w-6xl mx-auto space-y-6">
         <header>
           <h1 className="text-3xl font-bold">Customers</h1>
-          <p className="text-muted-foreground">Bridge Sandbox â€“ KYC auto-approved (sandbox)</p>
+          <p className="text-muted-foreground">Bridge Sandbox Ã¢â‚¬â€œ KYC auto-approved (sandbox)</p>
         </header>
 
         {showHealth && health && !health.key_present && (

@@ -66,7 +66,7 @@ const [cardTest, setCardTest] = useState<ApiTestState>({
 const [bridgeCreate, setBridgeCreate] = useState<ApiTestState>({ loading: false, response: null, status: 0, tests: [], expanded: false });
 const [bridgeFetch, setBridgeFetch] = useState<ApiTestState>({ loading: false, response: null, status: 0, tests: [], expanded: false });
 const [bridgeAuth, setBridgeAuth] = useState<ApiTestState>({ loading: false, response: null, status: 0, tests: [], expanded: false });
-const [bridgeFetchId, setBridgeFetchId] = useState<string>(typeof window !== 'undefined' ? localStorage.getItem('last_customer_id') || '');
+const [bridgeFetchId, setBridgeFetchId] = useState<string>((typeof window === 'undefined' ? null : localStorage.getItem()) || '');
 
   // Access denied for production
   if (!isDevelopment) {
@@ -248,7 +248,7 @@ return (
                 // Simulate latency
                 await new Promise((r) => setTimeout(r, 500));
                 const tests = res.ok && res.data ? testBridgeCreate(res.data) : [{ name: 'Request', passed: false, message: 'Failed' }];
-                if ((res.data as any)?.id) typeof window !== 'undefined' ? localStorage.setItem('last_customer_id', (res.data as any).id);
+                if ((res.data as any)?.id) (typeof window === 'undefined' ? void 0 : localStorage.setItem()).id);
                 setBridgeCreate({ loading: false, response: res.data, status: res.status, tests, expanded: true });
               }}
               disabled={bridgeCreate.loading}
@@ -301,7 +301,7 @@ return (
               <input className="w-full rounded border px-2 py-1 bg-background" placeholder="customer id" value={bridgeFetchId} onChange={(e) => setBridgeFetchId(e.target.value)} />
               <Button onClick={async () => {
                 setBridgeFetch((p) => ({ ...p, loading: true, tests: [] }));
-                const id = bridgeFetchId || typeof window !== 'undefined' ? localStorage.getItem('last_customer_id') || '';
+                const id = bridgeFetchId || (typeof window === 'undefined' ? null : localStorage.getItem()) || '';
                 const res = id ? await fetchCustomer(id) : { ok: false, status: 0, data: null };
                 await new Promise((r) => setTimeout(r, 500));
                 const tests = res.ok && res.data ? testBridgeFetch(res.data) : [{ name: 'Request', passed: false, message: 'Failed' }];
