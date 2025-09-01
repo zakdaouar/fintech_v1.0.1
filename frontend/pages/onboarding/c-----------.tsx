@@ -82,7 +82,7 @@ function ConfirmEmail() {
     if (password.length < 8) return setError("Use at least 8 characters.");
 
 
-    if (password !== confirm) return setError("Passwords donÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢t match.");
+    if (password !== confirm) return setError("Passwords donÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¾Ãƒâ€šÃ‚Â¢t match.");
 
 
     await authApi.setPassword({ email, password });

@@ -130,13 +130,13 @@ const mockCards: Card[] = [
 const mockWallets: WalletBalance[] = [
 
 
-  { currency: "EUR", amount: 450.75, method: "SEPA", status: "Activated", flag: "Ã°Å¸â€¡ÂªÃ°Å¸â€¡Âº" },
+  { currency: "EUR", amount: 450.75, method: "SEPA", status: "Activated", flag: "ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚ÂªÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Âº" },
 
 
-  { currency: "USD", amount: 725.25, method: "ACH", status: "Activated", flag: "Ã°Å¸â€¡ÂºÃ°Å¸â€¡Â¸" },
+  { currency: "USD", amount: 725.25, method: "ACH", status: "Activated", flag: "ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚ÂºÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â¸" },
 
 
-  { currency: "MXN", amount: 23450.00, method: "SPEI", status: "Activated", flag: "Ã°Å¸â€¡Â²Ã°Å¸â€¡Â½" },
+  { currency: "MXN", amount: 23450.00, method: "SPEI", status: "Activated", flag: "ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â²ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â½" },
 
 
 ];

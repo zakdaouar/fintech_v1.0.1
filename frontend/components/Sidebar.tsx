@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { Wallet } from 'lucide-react';
 import { Card } from '@/components/ui/card';
-import { Wallet } from 'lucide-react';
 const navigation = [
 
 

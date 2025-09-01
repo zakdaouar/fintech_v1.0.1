@@ -38,13 +38,13 @@ function IdvIntro() {
   return (
 
 
-    <OnboardingLayout title="Identity verification" description="Complete a few checks. Beware of phishing; weÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ll never ask for your full email code." stepIndex={9} totalSteps={18} onBack={() => router.push(-1)}>
+    <OnboardingLayout title="Identity verification" description="Complete a few checks. Beware of phishing; weÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¾Ãƒâ€šÃ‚Â¢ll never ask for your full email code." stepIndex={9} totalSteps={18} onBack={() => router.push(-1)}>
 
 
       <div className="space-y-4">
 
 
-        <p className="text-sm text-muted-foreground">YouÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ll verify your document, liveness, and proof of address. You can continue on your phone later.</p>
+        <p className="text-sm text-muted-foreground">YouÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¾Ãƒâ€šÃ‚Â¢ll verify your document, liveness, and proof of address. You can continue on your phone later.</p>
 
 
         <Button className="w-full" onClick={onNext}>Continue</Button>

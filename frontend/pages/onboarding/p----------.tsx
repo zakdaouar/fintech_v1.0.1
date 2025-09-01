@@ -38,7 +38,7 @@ function PhoneStatus() {
   return (
 
 
-    <OnboardingLayout title="Phone verification" description="WeÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ll auto-complete this if you verified less than 24 hours ago." stepIndex={15} totalSteps={18} onBack={() => router.push(-1)}>
+    <OnboardingLayout title="Phone verification" description="WeÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¾Ãƒâ€šÃ‚Â¢ll auto-complete this if you verified less than 24 hours ago." stepIndex={15} totalSteps={18} onBack={() => router.push(-1)}>
 
 
       <div className="space-y-4">

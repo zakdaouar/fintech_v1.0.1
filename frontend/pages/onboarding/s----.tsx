@@ -52,7 +52,7 @@ function Start() {
   return (
 
 
-    <OnboardingLayout title="Create your account" description="WeÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ll send a confirmation link to your email." stepIndex={0} totalSteps={18}>
+    <OnboardingLayout title="Create your account" description="WeÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¾Ãƒâ€šÃ‚Â¢ll send a confirmation link to your email." stepIndex={0} totalSteps={18}>
 
 
       <form className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
