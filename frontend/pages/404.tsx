@@ -83,4 +83,3 @@ const NotFound = () => {
 
 
 export default dynamic(() => Promise.resolve(NotFound), { ssr: false });
-

@@ -37,4 +37,3 @@ function Skeleton({
 
 
 export { Skeleton }
-
