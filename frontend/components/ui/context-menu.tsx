@@ -5,7 +5,7 @@ import * as ContextMenuPrimitive from "@radix-ui/react-context-menu"
 
 
 import { cn } from "@/lib/utils"
-import { Check, ChevronRight, Circle, ContextMenuPrimitive, HTMLSpanElement } from 'lucide-react';
+
 import { Label } from '@/components/ui/label';
 
 import { Separator } from '@/components/ui/separator';

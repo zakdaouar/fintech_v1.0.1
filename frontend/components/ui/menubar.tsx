@@ -5,7 +5,7 @@ import * as MenubarPrimitive from "@radix-ui/react-menubar"
 
 
 import { cn } from "@/lib/utils"
-import { Check, ChevronRight, Circle, HTMLSpanElement, MenubarPrimitive } from 'lucide-react';
+
 import { Label } from '@/components/ui/label';
 
 import { Separator } from '@/components/ui/separator';

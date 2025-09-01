@@ -8,7 +8,7 @@ import { cva, type VariantProps } from '@/lib/shims/cva'
 
 
 import { cn } from "@/lib/utils"
-import { HTMLDivElement, HTMLHeadingElement, HTMLParagraphElement } from 'lucide-react';
+
 import { Alert } from '@/components/ui/alert';
 
 const alertVariants = cva(

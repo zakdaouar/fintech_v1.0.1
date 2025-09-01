@@ -5,7 +5,7 @@ import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu"
 
 
 import { cn } from "@/lib/utils"
-import { Check, ChevronRight, Circle, DropdownMenuPrimitive, HTMLSpanElement } from 'lucide-react';
+
 import { Label } from '@/components/ui/label';
 
 import { Separator } from '@/components/ui/separator';

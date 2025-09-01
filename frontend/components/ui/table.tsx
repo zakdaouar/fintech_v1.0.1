@@ -5,7 +5,7 @@ import * as React from "react"
 
 
 import { cn } from "@/lib/utils"
-import { HTMLTableCaptionElement, HTMLTableCellElement, HTMLTableElement, HTMLTableRowElement, HTMLTableSectionElement } from 'lucide-react';
+
 const Table = React.forwardRef<
 
 

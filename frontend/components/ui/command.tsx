@@ -9,7 +9,7 @@ import { Command as CommandPrimitive } from "cmdk"
 
 import { cn } from "@/lib/utils"
 import { DialogTitle, DialogTrigger, Dialog, DialogContent, DialogHeader } from '@/components/ui/dialog';
-import { CommandPrimitive, HTMLSpanElement, Search } from 'lucide-react';
+
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 
 import { Input } from '@/components/ui/input';
