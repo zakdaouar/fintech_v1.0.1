@@ -26,6 +26,6 @@
                             "typescript":  "^5.5.3"
                         },
     "engines":  {
-                    "node":  "\u003e=18"
+                    "node":  "20.x"
                 }
 }
