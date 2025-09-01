@@ -38,4 +38,3 @@ function Skeleton({
 
 export { Skeleton }
 
-

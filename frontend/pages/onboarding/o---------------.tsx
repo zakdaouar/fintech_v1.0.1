@@ -48,7 +48,7 @@ export const OnboardingLayout = ({ title, description, stepIndex, totalSteps, on
   useEffect(() => {
 
 
-    document.title = `${title} ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â· Onboarding`;
+    document.title = `${title} ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â· Onboarding`;
 
 
   }, [title]);
@@ -69,7 +69,7 @@ export const OnboardingLayout = ({ title, description, stepIndex, totalSteps, on
         <div className="mb-5 flex items-center justify-between">
 
 
-          <p className="text-sm text-muted-foreground">Step {stepIndex + 1} of {totalSteps} ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â· {percent}%</p>
+          <p className="text-sm text-muted-foreground">Step {stepIndex + 1} of {totalSteps} ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â· {percent}%</p>
 
 
           {onBack && (
@@ -106,5 +106,4 @@ export const OnboardingLayout = ({ title, description, stepIndex, totalSteps, on
 
 
 };
-
 

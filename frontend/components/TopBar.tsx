@@ -9,7 +9,6 @@ import { Button } from '@/components/ui/button';
 import { Bell, LogOut, Settings, User } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
-import { Card } from "@/components/ui/card";
 
 export const TopBar = () => {
 

@@ -1,4 +1,5 @@
-import { Card } from '@/components/ui/card';
+import { Card } from '@/components/ui/card';
+
 import { Input } from '@/components/ui/input';
 
 // Simulated API layer for fintech app
@@ -130,13 +131,13 @@ const mockCards: Card[] = [
 const mockWallets: WalletBalance[] = [
 
 
-  { currency: "EUR", amount: 450.75, method: "SEPA", status: "Activated", flag: "ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚ÂªÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Âº" },
+  { currency: "EUR", amount: 450.75, method: "SEPA", status: "Activated", flag: "ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚ÂªÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Âº" },
 
 
-  { currency: "USD", amount: 725.25, method: "ACH", status: "Activated", flag: "ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚ÂºÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â¸" },
+  { currency: "USD", amount: 725.25, method: "ACH", status: "Activated", flag: "ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚ÂºÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Â¸" },
 
 
-  { currency: "MXN", amount: 23450.00, method: "SPEI", status: "Activated", flag: "ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â²ÃƒÂ°Ã…Â¸Ã¢â‚¬Â¡Ã‚Â½" },
+  { currency: "MXN", amount: 23450.00, method: "SPEI", status: "Activated", flag: "ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Â²ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡Ãƒâ€šÃ‚Â½" },
 
 
 ];

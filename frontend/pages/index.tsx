@@ -209,4 +209,3 @@ const Index = () => {
 
 export default dynamic(() => Promise.resolve(Index), { ssr: false });
 
-
