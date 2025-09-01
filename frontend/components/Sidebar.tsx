@@ -1,5 +1,5 @@
 
-import { 
+# fixed: ligne import { orpheline supprimée
 import Link from 'next/link';
   LayoutDashboard, 
   ArrowLeftRight, 
