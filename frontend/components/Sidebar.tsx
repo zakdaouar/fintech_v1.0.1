@@ -1,181 +1,25 @@
-import Link from 'next/link';
-import { Wallet } from 'lucide-react';
-import { Card } from '@/components/ui/card';
-const navigation = [
+import Link from "next/link";
+import { LayoutDashboard, ArrowLeftRight, CreditCard, Building, Wallet } from "lucide-react";
 
-
-  { name: 'Dashboard', href: '/dashboard', icon: LayoutDashboard },
-
-
-  { name: 'Transfers', href: '/transfers', icon: ArrowLeftRight },
-
-
-  { name: 'Issue Credit Card', href: '/issue-card', icon: CreditCard },
-
-
-  { name: 'Customers', href: '/customers', icon: Wallet },
-
-
-];
-
-
-
-
-
-export const Sidebar = () => {
-
-
+export function Sidebar() {
+  const items = [
+    { href: "/", label: "Dashboard", icon: LayoutDashboard },
+    { href: "/transfers", label: "Transfers", icon: ArrowLeftRight },
+    { href: "/cards", label: "Cards", icon: CreditCard },
+    { href: "/accounts", label: "Accounts", icon: Building },
+    { href: "/wallet", label: "Wallet", icon: Wallet }
+  ];
   return (
-
-
-    <div className="w-64 bg-gradient-card border-r border-border flex flex-col">
-
-
-      {/* Logo */}
-
-
-      <div className="p-6 border-b border-border">
-
-
-        <div className="flex items-center gap-3">
-
-
-          <div className="p-2 rounded-lg bg-gradient-primary">
-
-
-            <Wallet className="h-6 w-6 text-white" />
-
-
-          </div>
-
-
-          <div>
-
-
-            <h1 className="text-xl font-bold">Remoove</h1>
-
-
-            <p className="text-sm text-muted-foreground">Dashboard</p>
-
-
-          </div>
-
-
-        </div>
-
-
-      </div>
-
-
-
-
-
-      {/* Navigation */}
-
-
-      <nav className="flex-1 p-4">
-
-
-        <ul className="space-y-2">
-
-
-          {navigation.map((item) => (
-
-
-            <li key={item.name}>
-
-
-              <Link href={item.href}
-
-
-                className={({ isActive }) =>
-
-
-                  `flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 ${
-
-
-                    isActive
-
-
-                      ? 'bg-primary text-primary-foreground shadow-lg'
-
-
-                      : 'text-muted-foreground hover:text-foreground hover:bg-secondary/50'
-
-
-                  }`
-
-
-                }
-
-
-              >
-
-
-                <item.icon className="h-5 w-5" />
-
-
-                {item.name}
-
-
-              </Link>
-
-
-            </li>
-
-
-          ))}
-
-
-        </ul>
-
-
+    <aside className="w-64 border-r min-h-screen p-4">
+      <div className="font-bold mb-6">Fintech</div>
+      <nav className="space-y-1">
+        {items.map(({ href, label, icon: Icon }) => (
+          <Link key={href} href={href} className="flex items-center gap-2 rounded px-2 py-2 hover:bg-accent">
+            <Icon className="h-4 w-4" />
+            <span>{label}</span>
+          </Link>
+        ))}
       </nav>
-
-
-
-
-
-      {/* User Profile */}
-
-
-      <div className="p-4 border-t border-border">
-
-
-        <div className="flex items-center gap-3 p-3 rounded-lg bg-secondary/30">
-
-
-          <div className="h-8 w-8 rounded-full bg-gradient-primary flex items-center justify-center">
-
-
-            <span className="text-sm font-medium text-white">JD</span>
-
-
-          </div>
-
-
-          <div className="flex-1 min-w-0">
-
-
-            <p className="text-sm font-medium truncate">John Doe</p>
-
-
-            <p className="text-xs text-muted-foreground truncate">john@example.com</p>
-
-
-          </div>
-
-
-        </div>
-
-
-      </div>
-
-
-    </div>
-
-
+    </aside>
   );
-
-
-};
+}
