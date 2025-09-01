@@ -18,14 +18,14 @@ export const OnboardingLayout = ({ title, description, stepIndex, totalSteps, on
   const percent = Math.round(((stepIndex + 1) / totalSteps) * 100);
 
   useEffect(() => {
-    document.title = `${title} Â· Onboarding`;
+    document.title = `${title} Ã‚Â· Onboarding`;
   }, [title]);
 
   return (
     <main className="min-h-screen flex items-center justify-center p-6">
       <Card className="w-full max-w-xl p-6 bg-gradient-card border-border">
         <div className="mb-5 flex items-center justify-between">
-          <p className="text-sm text-muted-foreground">Step {stepIndex + 1} of {totalSteps} Â· {percent}%</p>
+          <p className="text-sm text-muted-foreground">Step {stepIndex + 1} of {totalSteps} Ã‚Â· {percent}%</p>
           {onBack && (
             <Button variant="outline" onClick={onBack}>Back</Button>
           )}

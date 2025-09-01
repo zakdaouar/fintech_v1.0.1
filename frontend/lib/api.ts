@@ -41,9 +41,9 @@ const mockCards: Card[] = [
 ];
 
 const mockWallets: WalletBalance[] = [
-  { currency: "EUR", amount: 450.75, method: "SEPA", status: "Activated", flag: "🇪🇺" },
-  { currency: "USD", amount: 725.25, method: "ACH", status: "Activated", flag: "🇺🇸" },
-  { currency: "MXN", amount: 23450.00, method: "SPEI", status: "Activated", flag: "🇲🇽" },
+  { currency: "EUR", amount: 450.75, method: "SEPA", status: "Activated", flag: "ðŸ‡ªðŸ‡º" },
+  { currency: "USD", amount: 725.25, method: "ACH", status: "Activated", flag: "ðŸ‡ºðŸ‡¸" },
+  { currency: "MXN", amount: 23450.00, method: "SPEI", status: "Activated", flag: "ðŸ‡²ðŸ‡½" },
 ];
 
 // Simulated API function with loading delay

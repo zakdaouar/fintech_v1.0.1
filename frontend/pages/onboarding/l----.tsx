@@ -33,7 +33,7 @@ function Login() {
   };
 
   return (
-    <OnboardingLayout title="Log in" description="Weâ€™ll send a 6â€‘digit code to your email." stepIndex={2} totalSteps={18} onBack={() => router.push(-1)}>
+    <OnboardingLayout title="Log in" description="WeÃ¢â‚¬â„¢ll send a 6Ã¢â‚¬â€˜digit code to your email." stepIndex={2} totalSteps={18} onBack={() => router.push(-1)}>
       <form className="space-y-4" onSubmit={onSubmit}>
         <div>
           <Label htmlFor="email">Email</Label>

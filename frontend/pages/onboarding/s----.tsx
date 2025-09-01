@@ -20,7 +20,7 @@ function Start() {
   };
 
   return (
-    <OnboardingLayout title="Create your account" description="Weâ€™ll send a confirmation link to your email." stepIndex={0} totalSteps={18}>
+    <OnboardingLayout title="Create your account" description="WeÃ¢â‚¬â„¢ll send a confirmation link to your email." stepIndex={0} totalSteps={18}>
       <form className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
         <div>
           <Label htmlFor="firstName">First name</Label>

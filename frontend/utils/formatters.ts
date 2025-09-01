@@ -24,7 +24,7 @@ export function maskCard(card: string, visible: number = 4) {
   if (!card) return "";
   const clean = card.replace(/\s+/g, "");
   const tail = clean.slice(-visible);
-  return `•••• •••• •••• ${tail}`;
+  return `â€¢â€¢â€¢â€¢ â€¢â€¢â€¢â€¢ â€¢â€¢â€¢â€¢ ${tail}`;
 }
 
 export function maskAccount(ibanOrAcct: string, visible: number = 4) {
@@ -34,5 +34,5 @@ export function maskAccount(ibanOrAcct: string, visible: number = 4) {
   return `****${tail}`;
 }
 
-// Alias rétro-compat si certains composants appellent formatAmount()
+// Alias rÃ©tro-compat si certains composants appellent formatAmount()
 export const formatAmount = formatAmountCents;

@@ -14,9 +14,9 @@ function IdvIntro() {
   };
 
   return (
-    <OnboardingLayout title="Identity verification" description="Complete a few checks. Beware of phishing; weâ€™ll never ask for your full email code." stepIndex={9} totalSteps={18} onBack={() => router.push(-1)}>
+    <OnboardingLayout title="Identity verification" description="Complete a few checks. Beware of phishing; weÃ¢â‚¬â„¢ll never ask for your full email code." stepIndex={9} totalSteps={18} onBack={() => router.push(-1)}>
       <div className="space-y-4">
-        <p className="text-sm text-muted-foreground">Youâ€™ll verify your document, liveness, and proof of address. You can continue on your phone later.</p>
+        <p className="text-sm text-muted-foreground">YouÃ¢â‚¬â„¢ll verify your document, liveness, and proof of address. You can continue on your phone later.</p>
         <Button className="w-full" onClick={onNext}>Continue</Button>
       </div>
     </OnboardingLayout>

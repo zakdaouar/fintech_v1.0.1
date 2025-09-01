@@ -30,7 +30,7 @@ function ConfirmEmail() {
     e.preventDefault();
     setError(null);
     if (password.length < 8) return setError("Use at least 8 characters.");
-    if (password !== confirm) return setError("Passwords donâ€™t match.");
+    if (password !== confirm) return setError("Passwords donÃ¢â‚¬â„¢t match.");
     await authApi.setPassword({ email, password });
     analytics.track({ name: "password_set_success" });
     router.push(`/onboarding/login?email=${encodeURIComponent(email)}`);

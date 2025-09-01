@@ -48,7 +48,7 @@ function TwoFactor() {
   };
 
   return (
-    <OnboardingLayout title="Twoâ€‘factor check" description={`Enter the 6â€‘digit code sent to ${email}`} stepIndex={3} totalSteps={18} onBack={() => router.push(-1)}>
+    <OnboardingLayout title="TwoÃ¢â‚¬â€˜factor check" description={`Enter the 6Ã¢â‚¬â€˜digit code sent to ${email}`} stepIndex={3} totalSteps={18} onBack={() => router.push(-1)}>
       <form className="space-y-4" onSubmit={onSubmit}>
         <InputOTP maxLength={6} value={code} onChange={setCode}>
           <InputOTPGroup>
