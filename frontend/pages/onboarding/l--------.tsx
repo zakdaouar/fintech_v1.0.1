@@ -19,7 +19,7 @@ function LegalName() {
   };
 
   return (
-    <OnboardingLayout title="Legal name" description="Use your exact legal name as it appears on your ID." stepIndex={5} totalSteps={18} onBack={() => router.push(-1)}>
+    <OnboardingLayout title="Legal name" description="Use your  legal name as it appears on your ID." stepIndex={5} totalSteps={18} onBack={() => router.push(-1)}>
       <div className="space-y-4">
         <Label htmlFor="legalName">Full legal name</Label>
         <Input id="legalName" value={name} onChange={(e) => setName(e.target.value)} />

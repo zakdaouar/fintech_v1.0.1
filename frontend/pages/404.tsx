@@ -4,14 +4,14 @@ import { useLocation } from 'next/link';
 import { useEffect } from "react";
 
 const NotFound = () => {
-  const location = useLocation();
+  const router = useRouter();
 
   useEffect(() => {
     console.error(
       "404 Error: User attempted to access non-existent route:",
-      location.pathname
+      router.pathname
     );
-  }, [location.pathname]);
+  }, [router.pathname]);
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-background">

@@ -1,5 +1,6 @@
-import { NavLink } from "react-router-dom";
+
 import { 
+import Link from 'next/link';
   LayoutDashboard, 
   ArrowLeftRight, 
   CreditCard,
@@ -34,8 +35,7 @@ export const Sidebar = () => {
         <ul className="space-y-2">
           {navigation.map((item) => (
             <li key={item.name}>
-              <NavLink
-                to={item.href}
+              <Link href={item.href}
                 className={({ isActive }) =>
                   `flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 ${
                     isActive
@@ -46,7 +46,7 @@ export const Sidebar = () => {
               >
                 <item.icon className="h-5 w-5" />
                 {item.name}
-              </NavLink>
+              </Link>
             </li>
           ))}
         </ul>

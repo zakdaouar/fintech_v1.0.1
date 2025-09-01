@@ -1,3 +1,5 @@
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 /* eslint-disable react/no-unescaped-entities */
 import { Button } from "@/components/ui/button";
 import {
@@ -7,10 +9,9 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Bell, Settings, LogOut, User } from "lucide-react";
-import { useNavigate } from "react-router-dom";
 
 export const TopBar = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
   return (
     <div className="h-16 bg-gradient-card border-b border-border px-6 flex items-center justify-between" role="banner">
       <div>
@@ -48,7 +49,7 @@ export const TopBar = () => {
               <Settings className="mr-2 h-4 w-4" />
               Settings
             </DropdownMenuItem>
-            <DropdownMenuItem className="text-destructive" onSelect={() => navigate("/")}>
+            <DropdownMenuItem className="text-destructive" onSelect={() => router.push("/")}>
               <LogOut className="mr-2 h-4 w-4" />
               Sign out
             </DropdownMenuItem>
