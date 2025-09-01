@@ -5,8 +5,6 @@ import * as React from "react"
 
 
 import { cn } from "@/lib/utils"
-import { HTMLDivElement, HTMLHeadingElement, HTMLParagraphElement } from 'lucide-react';
-import { Card } from '@/components/ui/card';
 
 const Card = React.forwardRef<
 

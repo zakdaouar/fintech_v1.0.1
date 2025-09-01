@@ -8,8 +8,6 @@ import { cva, type VariantProps } from '@/lib/shims/cva'
 
 
 import { cn } from "@/lib/utils"
-import { HTMLDivElement } from 'lucide-react';
-import { Badge } from '@/components/ui/badge';
 
 const badgeVariants = cva(
 

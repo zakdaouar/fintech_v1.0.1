@@ -11,8 +11,6 @@ import { cva, type VariantProps } from '@/lib/shims/cva'
 
 
 import { cn } from "@/lib/utils"
-import { HTMLButtonElement } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 
 import { Input } from '@/components/ui/input';
 

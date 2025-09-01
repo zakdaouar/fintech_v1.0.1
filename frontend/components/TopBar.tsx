@@ -6,11 +6,10 @@ import { useRouter } from 'next/router';
 
 /* eslint-disable react/no-unescaped-entities */
 import { Button } from '@/components/ui/button';
-import { Bell, DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger, LogOut, Settings, User } from 'lucide-react';
+import { Bell, LogOut, Settings, User } from 'lucide-react';
 import { Card } from '@/components/ui/card';
-
-} from "@/components/ui/dropdown-menu";
-
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { Card } from "@/components/ui/card";
 
 export const TopBar = () => {
 
