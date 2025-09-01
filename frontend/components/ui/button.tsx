@@ -1,9 +1,8 @@
+
+export { Button, buttonVariants }
 import { Slot } from "@radix-ui/react-slot";
+
 import * as React from "react"
-
-
-import { Slot } from "@radix-ui/react-slot"
-
 
 import { cva, type VariantProps } from '@/lib/shims/cva'
 
